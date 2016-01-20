@@ -23,6 +23,8 @@ allow rild mif_device:chr_file rw_file_perms;
 # /sys/devices/virtual/misc/multipdp/waketime
 allow rild sysfs_multipdp:file rw_file_perms;
 
+allow rild sysfs_input:file rw_file_perms;
+
 # /proc/sys/net/ipv6/conf/*/accept_ra_defrtr
 allow rild proc_net:file rw_file_perms;
 
