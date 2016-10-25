@@ -69,6 +69,7 @@ TARGET_KERNEL_SOURCE := kernel/samsung/universal7580
 # Use these flags if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # Exclude AudioFX
 TARGET_EXCLUDES_AUDIOFX := true
