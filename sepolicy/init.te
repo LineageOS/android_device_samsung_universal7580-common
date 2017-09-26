@@ -31,3 +31,5 @@ allow init sysfs_camera_writable:file { relabelto setattr };
 allow init sysfs_camera_writable:filesystem associate;
 
 unix_socket_connect(init, property, rild)
+
+allow init { domain -lmkd -crash_dump }:process noatsecure;
