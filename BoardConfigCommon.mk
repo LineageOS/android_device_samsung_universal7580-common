@@ -43,6 +43,9 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a53
 TARGET_CPU_CORTEX_A53 := true
 
+# Audio
+USE_XML_AUDIO_POLICY_CONF := 1
+
 # Binder
 TARGET_USES_64_BIT_BINDER := true
 
