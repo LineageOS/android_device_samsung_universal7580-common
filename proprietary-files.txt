@@ -35,9 +35,6 @@ lib/omx/libOMX.Exynos.VP8.Decoder.so|338a089ac76e867eb795343dce4ee2b5326b0c77
 lib/omx/libOMX.Exynos.VP8.Encoder.so|2f13479cc28b6e3cfa92202326bc26e812a4f620
 lib/omx/libOMX.Exynos.WMV.Decoder.so|829ee8de0450615bf573c418d5205de3c33b50a1
 
-# RIL
-lib/libsecnativefeature.so
-
 # Widevine
 vendor/lib/mediadrm/libdrmclearkeyplugin.so
 lib/libstagefright_hdcp.so
