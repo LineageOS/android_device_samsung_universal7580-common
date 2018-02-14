@@ -1,11 +1,7 @@
 # Camera
-lib/libexynosv4l2.so
 lib/libhwjpeg.so
 lib/libuniplugin.so
 lib/libsensorlistener.so
-
-# Gralloc
-lib/hw/gralloc.exynos5.so
 
 # GPS
 bin/gpsd
@@ -16,9 +12,6 @@ lib/libfloatingfeature.so
 
 # Graphics
 vendor/lib/egl/libGLES_mali.so
-lib/libcsc.so
-lib/libexynosscaler.so
-lib/libexynosgscaler.so
 
 # Mobicore
 bin/cs
@@ -38,8 +31,6 @@ lib/omx/libOMX.Exynos.MPEG4.Encoder.so|371668ced35a70f327b3e723d774a14505cff341
 lib/omx/libOMX.Exynos.VP8.Decoder.so|338a089ac76e867eb795343dce4ee2b5326b0c77
 lib/omx/libOMX.Exynos.VP8.Encoder.so|2f13479cc28b6e3cfa92202326bc26e812a4f620
 lib/omx/libOMX.Exynos.WMV.Decoder.so|829ee8de0450615bf573c418d5205de3c33b50a1
-lib/libExynosOMX_Resourcemanager.so|d928a21d8a653d8ee40c9a609e86151a476d068e
-lib/libExynosOMX_Core.so
 
 # RIL
 lib/libsecnativefeature.so
