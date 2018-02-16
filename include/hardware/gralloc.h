@@ -72,6 +72,11 @@ enum {
     GRALLOC_USAGE_SW_READ_RARELY        = 0x00000002U,
     /* buffer is often read in software */
     GRALLOC_USAGE_SW_READ_OFTEN         = 0x00000003U,
+    /* added for VR single buffer only */
+#ifdef USES_VR_FRONT_BUFFER
+    GRALLOC_USAGE_VR_SINGLE_BUFFER_USAGE= 0x00000004U,
+#endif
+
     /* mask for the software read values */
     GRALLOC_USAGE_SW_READ_MASK          = 0x0000000FU,
 
@@ -118,11 +123,9 @@ enum {
     /* buffer will be used as part of zero-shutter-lag queue */
     GRALLOC_USAGE_HW_CAMERA_ZSL         = 0x00060000U,
     /* mask for the camera access values */
-    GRALLOC_USAGE_HW_CAMERA_MASK        = 0x00060000,
-    /* buffer will be used by the HW IPs when sysmmu is off */
-    GRALLOC_USAGE_PHYSICALLY_LINEAR     = 0x01000000U,
+    GRALLOC_USAGE_HW_CAMERA_MASK        = 0x00060000U,
     /* mask for the software usage bit-mask */
-    GRALLOC_USAGE_HW_MASK               = 0x00079F00U,
+    GRALLOC_USAGE_HW_MASK               = 0x00071F00U,
 
     /* buffer will be used as a RenderScript Allocation */
     GRALLOC_USAGE_RENDERSCRIPT          = 0x00100000U,
@@ -145,13 +148,19 @@ enum {
     GRALLOC_USAGE_PRIVATE_3             = 0x80000000U,
     GRALLOC_USAGE_PRIVATE_MASK          = 0xF0000000U,
 
-    GRALLOC_USAGE_INTERNAL_ONLY         = 0x10000000,
-    GRALLOC_USAGE_EXTERNAL_FLEXIBLE     = 0x20000000,
-    GRALLOC_USAGE_EXTERNAL_BLOCK        = 0x40000000,
-    GRALLOC_USAGE_EXTERNAL_ONLY         = 0x80000000,
-    GRALLOC_USAGE_EXTERNAL_VIRTUALFB    = 0x00400000,
-    GRALLOC_USAGE_PRIVATE_NONSECURE     = 0x02000000,
-    GRALLOC_USAGE_GPU_BUFFER            = 0x00800000,
+    GRALLOC_USAGE_INTERNAL_ONLY         = 0x10000000U,
+    GRALLOC_USAGE_EXTERNAL_FLEXIBLE     = 0x20000000U,
+    GRALLOC_USAGE_EXTERNAL_BLOCK        = 0x40000000U,
+    GRALLOC_USAGE_EXTERNAL_ONLY         = 0x80000000U,
+    GRALLOC_USAGE_EXTERNAL_VIRTUALFB    = 0x00400000U,
+    GRALLOC_USAGE_PROTECTED_DPB         = 0x00800000U,
+    /* buffer will be used by the HW IPs when sysmmu is off */
+    GRALLOC_USAGE_PHYSICALLY_LINEAR     = 0x01000000U,
+    GRALLOC_USAGE_PRIVATE_NONSECURE     = 0x02000000U,
+    GRALLOC_USAGE_CAMERA_RESERVED       = 0x04000000U,
+    GRALLOC_USAGE_NOZEROED              = 0x08000000U,
+    GRALLOC_USAGE_VIDEO_EXT             = 0x10000000U,
+    GRALLOC_USAGE_GPU_BUFFER            = 0x00800000U,
 };
 
 /*****************************************************************************/
@@ -163,20 +172,20 @@ enum {
  */
 typedef struct gralloc_module_t {
     struct hw_module_t common;
-
+    
     /*
      * (*registerBuffer)() must be called before a buffer_handle_t that has not
      * been created with (*alloc_device_t::alloc)() can be used.
-     *
+     * 
      * This is intended to be used with buffer_handle_t's that have been
      * received in this process through IPC.
-     *
+     * 
      * This function checks that the handle is indeed a valid one and prepares
      * it for use with (*lock)() and (*unlock)().
-     *
+     * 
      * It is not necessary to call (*registerBuffer)() on a handle created 
      * with (*alloc_device_t::alloc)().
-     *
+     * 
      * returns an error if this buffer_handle_t is not valid.
      */
     int (*registerBuffer)(struct gralloc_module_t const* module,
@@ -186,25 +195,25 @@ typedef struct gralloc_module_t {
      * (*unregisterBuffer)() is called once this handle is no longer needed in
      * this process. After this call, it is an error to call (*lock)(),
      * (*unlock)(), or (*registerBuffer)().
-     *
+     * 
      * This function doesn't close or free the handle itself; this is done
      * by other means, usually through libcutils's native_handle_close() and
      * native_handle_free(). 
-     *
+     * 
      * It is an error to call (*unregisterBuffer)() on a buffer that wasn't
      * explicitly registered first.
      */
     int (*unregisterBuffer)(struct gralloc_module_t const* module,
             buffer_handle_t handle);
-
+    
     /*
      * The (*lock)() method is called before a buffer is accessed for the 
      * specified usage. This call may block, for instance if the h/w needs
      * to finish rendering or if CPU caches need to be synchronized.
-     *
+     * 
      * The caller promises to modify only pixels in the area specified 
      * by (l,t,w,h).
-     *
+     * 
      * The content of the buffer outside of the specified area is NOT modified
      * by this call.
      *
@@ -219,7 +228,7 @@ typedef struct gralloc_module_t {
      *
      * It is legal for several different threads to lock a buffer from 
      * read access, none of the threads are blocked.
-     *
+     * 
      * However, locking a buffer simultaneously for write or read/write is
      * undefined, but:
      * - shall not result in termination of the process
@@ -229,19 +238,20 @@ typedef struct gralloc_module_t {
      *
      * If the buffer was created with a usage mask incompatible with the
      * requested usage flags here, -EINVAL is returned. 
-     *
+     * 
      */
-
+    
     int (*lock)(struct gralloc_module_t const* module,
             buffer_handle_t handle, int usage,
             int l, int t, int w, int h,
             void** vaddr);
 
+    
     /*
      * The (*unlock)() method must be called after all changes to the buffer
      * are completed.
      */
-
+    
     int (*unlock)(struct gralloc_module_t const* module,
             buffer_handle_t handle);
 
@@ -333,7 +343,7 @@ typedef struct gralloc_module_t {
 typedef struct alloc_device_t {
     struct hw_device_t common;
 
-    /*
+    /* 
      * (*alloc)() Allocates a buffer in graphic memory with the requested
      * parameters and returns a buffer_handle_t and the stride in pixels to
      * allow the implementation to satisfy hardware constraints on the width
@@ -343,10 +353,10 @@ typedef struct alloc_device_t {
      * If format is HAL_PIXEL_FORMAT_YCbCr_420_888, the returned stride must be
      * 0, since the actual strides are available from the android_ycbcr
      * structure.
-     *
+     * 
      * Returns 0 on success or -errno on error.
      */
-
+    
     int (*alloc)(struct alloc_device_t* dev,
             int w, int h, int format, int usage,
             buffer_handle_t* handle, int* stride);
