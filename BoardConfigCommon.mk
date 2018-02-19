@@ -69,6 +69,9 @@ TARGET_KERNEL_SOURCE := kernel/samsung/universal7580
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
+# Extended filesystem support
+TARGET_EXFAT_DRIVER := sdfat
+
 # Vendor separation
 TARGET_COPY_OUT_VENDOR := system/vendor
 
