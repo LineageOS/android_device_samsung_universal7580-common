@@ -880,6 +880,7 @@ on property:ro.bootmode=charger
 service charger /charger
     class charger
     critical
+    seclabel u:r:charger:s0
 
 on charger
     # Set cpu governor to powersave while in charging mode
