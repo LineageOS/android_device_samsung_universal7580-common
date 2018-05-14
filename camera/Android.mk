@@ -11,10 +11,7 @@ LOCAL_SHARED_LIBRARIES := \
     android.hidl.token@1.0-utils \
     android.hardware.graphics.bufferqueue@1.0
 
-LOCAL_C_INCLUDES += \
-    system/core/include \
-    system/media/camera/include \
-    frameworks/native/libs/arect/include
+LOCAL_HEADER_LIBRARIES := libnativebase_headers
 
 LOCAL_MODULE_RELATIVE_PATH := hw
 
