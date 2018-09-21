@@ -130,3 +130,5 @@ WIFI_BAND                        := 802_11_ABG
 # MACLOADER
 BOARD_HAVE_SAMSUNG_WIFI          := true
 
+# Lineage Hardware
+BOARD_HARDWARE_CLASS := hardware/samsung/lineagehw $(LOCAL_PATH)/lineagehw
