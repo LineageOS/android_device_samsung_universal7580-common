@@ -15,3 +15,7 @@
 #
 
 LOCAL_PATH := device/samsung/universal7580-common
+
+# call Samsung LSI board support package
+$(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
+$(call inherit-product, hardware/samsung_slsi-cm/exynos7580/exynos7580.mk)
