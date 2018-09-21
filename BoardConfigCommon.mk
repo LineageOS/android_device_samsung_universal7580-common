@@ -69,3 +69,42 @@ TARGET_COPY_OUT_VENDOR := system/vendor
 
 # Device Tree
 BOARD_USES_DT := true
+
+# Screen casting
+BOARD_USES_WFD := true
+
+# BGRA mixing
+BOARD_USE_BGRA_8888_FB := true
+
+# Virtual display
+BOARD_USES_VIRTUAL_DISPLAY := true
+
+# FIMG2API
+BOARD_USES_SKIA_FIMGAPI := true
+
+# HDMI
+BOARD_HDMI_INCAPABLE := true
+BOARD_USES_GSC_VIDEO := true
+
+# ION
+TARGET_USES_ION := true
+
+# Samsung OpenMAX Video
+# BOARD_USE_STOREMETADATA := true  -- not working due to invalid buffer handles
+BOARD_USE_METADATABUFFERTYPE := true
+BOARD_USE_DMA_BUF := true
+BOARD_USE_ANB_OUTBUF_SHARE := true
+BOARD_USE_IMPROVED_BUFFER := true
+BOARD_USE_NON_CACHED_GRAPHICBUFFER := true
+BOARD_USE_GSC_RGB_ENCODER := true
+BOARD_USE_CSC_HW := false
+BOARD_USE_QOS_CTRL := false
+BOARD_USE_S3D_SUPPORT := true
+BOARD_USE_VP8ENC_SUPPORT := true
+
+# Scalar
+BOARD_USES_SCALER := true
+
+# HWCServices - requires framework support
+#BOARD_USES_HWC_SERVICES := true
+
