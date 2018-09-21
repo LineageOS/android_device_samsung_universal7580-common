@@ -16,6 +16,16 @@
 
 LOCAL_PATH := device/samsung/universal7580-common
 
+# Audio
+PRODUCT_PACKAGES += \
+    audio.primary.universal7580 \
+    audio.a2dp.default \
+    audio.r_submix.default \
+    audio.usb.default \
+    tinymix \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl
+
 # call Samsung LSI board support package
 $(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
 $(call inherit-product, hardware/samsung_slsi-cm/exynos7580/exynos7580.mk)

@@ -28,6 +28,7 @@ TARGET_BOARD_PLATFORM := exynos5
 TARGET_SLSI_VARIANT := cm
 TARGET_SOC := exynos7580
 TARGET_BOOTLOADER_BOARD_NAME := universal7580
+BOARD_VENDOR := samsung
 
 # CPU
 TARGET_ARCH := arm
@@ -108,3 +109,5 @@ BOARD_USES_SCALER := true
 # HWCServices - requires framework support
 #BOARD_USES_HWC_SERVICES := true
 
+# Samsung HALs
+TARGET_AUDIOHAL_VARIANT := samsung
