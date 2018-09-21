@@ -132,3 +132,6 @@ BOARD_HAVE_SAMSUNG_WIFI          := true
 
 # Lineage Hardware
 BOARD_HARDWARE_CLASS := hardware/samsung/lineagehw $(LOCAL_PATH)/lineagehw
+
+# Backlight
+BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
