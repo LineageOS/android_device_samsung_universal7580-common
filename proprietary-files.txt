@@ -46,7 +46,9 @@ lib/libExynosOMX_Resourcemanager.so
 lib/libsecnativefeature.so
 
 # Widevine
-vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/mediadrm/libdrmclearkeyplugin.so
 lib/libstagefright_hdcp.so
 lib/liboemcrypto.so
+
+# Widevine - from angler (OPR6.170623.017)
+vendor/lib/mediadrm/libwvdrmengine.so|66ba66d047044f92eb0eada1faf6a5799ded90ab
