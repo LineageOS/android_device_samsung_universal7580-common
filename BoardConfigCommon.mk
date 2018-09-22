@@ -135,3 +135,6 @@ BOARD_HARDWARE_CLASS := hardware/samsung/lineagehw $(LOCAL_PATH)/lineagehw
 
 # Backlight
 BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
+
+# Seccomp filters
+BOARD_SECCOMP_POLICY += $(LOCAL_PATH)/seccomp
