@@ -130,6 +130,12 @@ WIFI_BAND                        := 802_11_ABG
 # MACLOADER
 BOARD_HAVE_SAMSUNG_WIFI          := true
 
+# Bluetooth
+BOARD_CUSTOM_BT_CONFIG := $(LOCAL_PATH)/bluetooth/libbt_vndcfg.txt
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_HAVE_SAMSUNG_BLUETOOTH := true
+
 # Lineage Hardware
 BOARD_HARDWARE_CLASS := hardware/samsung/lineagehw $(LOCAL_PATH)/lineagehw
 
