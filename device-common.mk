@@ -16,6 +16,8 @@
 
 LOCAL_PATH := device/samsung/universal7580-common
 
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.primary.universal7580 \
