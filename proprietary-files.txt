@@ -34,16 +34,16 @@ lib/libprotobuf-cpp-fl26.so|f2436050b38e5acb63d36ad7b24a0c2612d68749
 vendor/lib/libLifevibes_lvverx.so
 vendor/lib/libLifevibes_lvvetx.so
 
-# OMX
-lib/omx/libOMX.Exynos.AVC.Decoder.so
-lib/omx/libOMX.Exynos.AVC.Encoder.so
-lib/omx/libOMX.Exynos.MPEG4.Decoder.so
-lib/omx/libOMX.Exynos.MPEG4.Encoder.so
-lib/omx/libOMX.Exynos.VP8.Decoder.so
-lib/omx/libOMX.Exynos.VP8.Encoder.so
-lib/omx/libOMX.Exynos.WMV.Decoder.so
+# OMX - from a3xeltexx (A310FXXU4CRG2)
+lib/omx/libOMX.Exynos.AVC.Decoder.so|068a5120f2b4adbe888293931c2ddae92dcecd49
+lib/omx/libOMX.Exynos.AVC.Encoder.so|eaef14d4c26e6b0d27ba8a7d3ba109810450053a
+lib/omx/libOMX.Exynos.MPEG4.Decoder.so|4246f3d7695da33c482852eb4bd34a56c9183b48
+lib/omx/libOMX.Exynos.MPEG4.Encoder.so|371668ced35a70f327b3e723d774a14505cff341
+lib/omx/libOMX.Exynos.VP8.Decoder.so|338a089ac76e867eb795343dce4ee2b5326b0c77
+lib/omx/libOMX.Exynos.VP8.Encoder.so|2f13479cc28b6e3cfa92202326bc26e812a4f620
+lib/omx/libOMX.Exynos.WMV.Decoder.so|829ee8de0450615bf573c418d5205de3c33b50a1
+lib/libExynosOMX_Resourcemanager.so|d928a21d8a653d8ee40c9a609e86151a476d068e
 lib/libExynosOMX_Core.so
-lib/libExynosOMX_Resourcemanager.so
 
 # RIL
 lib/libsecnativefeature.so
