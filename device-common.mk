@@ -153,6 +153,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     textclassifier.smartselection.bundle1
 
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-impl \
+    android.hardware.usb@1.0-service
+
 # Wifi
 PRODUCT_PACKAGES += \
     macloader \
