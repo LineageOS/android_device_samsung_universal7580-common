@@ -118,6 +118,7 @@ BOARD_USES_SCALER := true
 
 # Samsung HALs
 TARGET_AUDIOHAL_VARIANT := samsung
+TARGET_POWERHAL_VARIANT := samsung
 
 # Wifi
 BOARD_WLAN_DEVICE                := bcmdhd
