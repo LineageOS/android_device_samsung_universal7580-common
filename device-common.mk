@@ -112,6 +112,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SamsungDoze
 
+# Shims
+PRODUCT_PACKAGES += \
+    libcamera_client_shim \
+    libexynoscamera_shim \
+    libExynosOMX_shim \
+    libstagefright_shim \
+    libui_shim
+
 # TextClassifier
 PRODUCT_PACKAGES += \
     textclassifier.smartselection.bundle1
