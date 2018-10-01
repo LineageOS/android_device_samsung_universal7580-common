@@ -19,6 +19,10 @@ LOCAL_PATH := device/samsung/universal7580-common
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
+ifneq ($(TARGET_DEVICE), gvwifi)
+TARGET_SPECIFIC_HEADER_PATH += $(LOCAL_PATH)/ril/include
+endif
+
 # Firmware
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
