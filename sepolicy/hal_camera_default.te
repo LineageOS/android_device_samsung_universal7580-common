@@ -1,0 +1,5 @@
+# hal_camera_default
+allow hal_camera_default sysfs_camera_writable:dir search;
+allow hal_camera_default sysfs_camera_writable:file { getattr open read };
+
+vndbinder_use(hal_camera_default)

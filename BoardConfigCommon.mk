@@ -153,6 +153,10 @@ BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/etc/fstab.samsungexynos7580
 
+# SELinux
+BOARD_SEPOLICY_DIRS += device/samsung/universal7580-common/sepolicy 
+BOARD_SEPOLICY_VERS := $(PLATFORM_SDK_VERSION).0
+
 # Shims
 TARGET_LD_SHIM_LIBS := \
     /system/lib/omx/libOMX.Exynos.AVC.Decoder.so|/vendor/lib/libui_shim.so \
