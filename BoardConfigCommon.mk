@@ -59,6 +59,8 @@ BOARD_KERNEL_IMAGE_NAME := Image
 #BOARD_KERNEL_CMDLINE := The bootloader ignores the cmdline from the boot.img
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
+BOARD_ROOT_EXTRA_FOLDERS += efs cpefs
+TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
 
 # Kernel
 TARGET_KERNEL_ARCH := arm64
