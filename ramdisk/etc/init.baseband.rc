@@ -1,5 +1,4 @@
 on init
-    mkdir /efs 0771 radio system
     symlink /dev/block/platform/13540000.dwmmc0/by-name/RADIO /dev/mbin0
     restorecon /dev/mbin0
     write /sys/class/net/rmnet0/queues/rx-0/rps_cpus 6
@@ -33,14 +32,6 @@ on fs
     chown radio radio sys/devices/virtual/misc/multipdp/waketime
     chmod 0660 /sys/devices/virtual/misc/umts_dm0/dm_state
     chown radio system /sys/devices/virtual/misc/umts_dm0/dm_state
-
-#For cpefs partition
-    mkdir /cpefs 0771 radio system
-    wait /dev/block/platform/13540000.dwmmc0/by-name/CPEFS
-    exec /system/bin/e2fsck -p /dev/block/platform/13540000.dwmmc0/by-name/CPEFS
-    mount ext4 /dev/block/platform/13540000.dwmmc0/by-name/CPEFS /cpefs noatime nosuid nodev barrier=1
-    chown radio system /cpefs
-    chmod 0771 /cpefs
 
 # Parse hardware revision (needs to happen before cbd starts)
 service modemloader /system/bin/modemloader
