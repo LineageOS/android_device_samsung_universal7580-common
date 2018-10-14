@@ -15,6 +15,7 @@
 #
 
 LOCAL_PATH := device/samsung/universal7580-common
+BUILD_TOP := $(shell pwd)
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
@@ -59,7 +60,7 @@ TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 # Kernel
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
+KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
 TARGET_LINUX_KERNEL_VERSION := 3.10
 
 # Kernel config
