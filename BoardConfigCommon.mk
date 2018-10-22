@@ -78,6 +78,9 @@ TARGET_COPY_OUT_VENDOR := system/vendor
 # Device Tree
 BOARD_USES_DT := true
 
+# Graphics
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+
 # Screen casting
 BOARD_USES_WFD := true
 
