@@ -30,10 +30,6 @@ lib/libsec-ril-dsds.so
 # protobuf
 lib/libprotobuf-cpp-fl26.so|f2436050b38e5acb63d36ad7b24a0c2612d68749
 
-# Noise supppression
-vendor/lib/libLifevibes_lvverx.so
-vendor/lib/libLifevibes_lvvetx.so
-
 # OMX - from a3xeltexx (A310FXXU4CRG2)
 lib/omx/libOMX.Exynos.AVC.Decoder.so|068a5120f2b4adbe888293931c2ddae92dcecd49
 lib/omx/libOMX.Exynos.AVC.Encoder.so|eaef14d4c26e6b0d27ba8a7d3ba109810450053a
