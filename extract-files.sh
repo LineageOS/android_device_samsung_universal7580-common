@@ -56,5 +56,7 @@ extract "$MY_DIR"/proprietary-files.txt "$SRC"
 BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary
 
 patchelf --replace-needed libgui.so libsensor.so $BLOB_ROOT/bin/gpsd
+patchelf --replace-needed libprotobuf-cpp-full.so libprotobuf-cpp-fl26.so $BLOB_ROOT/lib/libsec-ril.so
+patchelf --replace-needed libprotobuf-cpp-full.so libprotobuf-cpp-fl26.so $BLOB_ROOT/lib/libsec-ril-dsds.so
 
 "$MY_DIR"/setup-makefiles.sh
