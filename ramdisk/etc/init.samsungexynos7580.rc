@@ -425,6 +425,7 @@ on fs
     chown system radio /sys/class/sensors/proximity_sensor/raw_data
     chown system radio /sys/class/sensors/proximity_sensor/prox_avg
     chown system radio /sys/class/sensors/proximity_sensor/prox_cal
+    chown system radio /sys/class/sensors/proximity_sensor/prox_thresh
     chown system radio /sys/class/sensors/proximity_sensor/vendor
     chown system radio /sys/class/sensors/proximity_sensor/name
     chown system radio /sys/class/sensors/proximity_sensor/thresh_high
@@ -455,7 +456,6 @@ on fs
     chown system radio /sys/class/sensors/barometer_sensor/calibration
 
 # Magnetic_sensor
-    chown system radio /sys/class/sensors/magnetic_sensor/raw_data
     chown system radio /sys/class/sensors/magnetic_sensor/vendor
     chown system radio /sys/class/sensors/magnetic_sensor/name
     chown system radio /sys/class/sensors/magnetic_sensor/selftest
@@ -486,7 +486,6 @@ on fs
     chown system radio /sys/class/sensors/hrm_sensor/read_reg
     chown system radio /sys/class/sensors/hrm_sensor/write_reg
     chown system radio /sys/class/sensors/hrm_sensor/ctrl_allreg_file
-    chown system radio /sys/class/sensors/hrm_sensor/led_current
     chown system radio /sys/class/sensors/hrm_sensor/alc_enable
     chown system radio /sys/class/sensors/hrm_sensor/selftest
 
@@ -494,9 +493,6 @@ on fs
     chown system radio /sys/class/sensors/hrmled_sensor/name
     chown system radio /sys/class/sensors/hrmled_sensor/vendor
     chown system radio /sys/class/sensors/hrmled_sensor/hrmled_flush
-
- # Meta_sensor
-    chown system radio /sys/class/sensors/sensor_dev/flush
 
 # UV_sensor
     chown system radio /sys/class/sensors/uv_sensor/name
