@@ -80,9 +80,6 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 # Exclude AudioFX
 TARGET_EXCLUDES_AUDIOFX := true
 
-# Extended filesystem support
-TARGET_EXFAT_DRIVER := sdfat
-
 # Vendor separation
 TARGET_COPY_OUT_VENDOR := system/vendor
 
