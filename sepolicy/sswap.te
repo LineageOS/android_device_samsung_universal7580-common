@@ -1,0 +1,20 @@
+type sswap, domain;
+type sswap_exec, exec_type, file_type;
+type sswap_device, dev_type;
+
+init_daemon_domain(sswap);
+
+allow sswap sswap_device:blk_file { read write open };
+allow sswap rootfs:file { entrypoint read };
+allow sswap sysfs:file { write open read };
+allow sswap block_device:dir search;
+allow sswap self:capability sys_admin;
+
+allow sswap proc:file { open getattr read };
+allow sswap proc_meminfo:file { open read getattr };
+allow sswap property_socket:sock_file write;
+allow sswap init:unix_stream_socket connectto;
+
+allow sswap properties_device:dir { read open };
+allow sswap proc_stat:dir { read open getattr };
+allow sswap proc_stat:file { read open getattr };
