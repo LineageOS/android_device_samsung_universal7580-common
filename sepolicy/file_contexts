@@ -161,3 +161,5 @@
 /system/bin/cbd              u:object_r:cpboot-daemon_exec:s0
 /system/bin/gpsd             u:object_r:gpsd_exec:s0
 /system/bin/sswap            u:object_r:sswap_exec:s0
+
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.samsung                 u:object_r:hal_lineage_touch_default_exec:s0
