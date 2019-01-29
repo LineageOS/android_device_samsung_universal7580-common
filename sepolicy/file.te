@@ -47,3 +47,6 @@ type sysfs_block, sysfs_type, fs_type, mlstrustedobject;
 type sysfs_jack, sysfs_type, fs_type, mlstrustedobject;
 
 allow sysfs_type tmpfs:filesystem associate;
+
+### data types
+type display_vendor_data_file, file_type, data_file_type;
