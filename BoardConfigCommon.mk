@@ -166,11 +166,6 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_HAVE_SAMSUNG_BLUETOOTH := true
 
-# Lineage Hardware
-JAVA_SOURCE_OVERLAYS := \
-    org.lineageos.hardware|hardware/samsung/lineagehw|**/*.java \
-    org.lineageos.hardware|$(LOCAL_PATH)/lineagehw|**/*.java
-
 # Backlight
 BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 
