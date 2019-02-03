@@ -160,8 +160,6 @@
 /system/bin/sensorhubservice u:object_r:sensorhubservice_exec:s0
 /system/bin/wifiloader       u:object_r:wifiloader_exec:s0
 
-/system/vendor/bin/macloader u:object_r:macloader_exec:s0
-
 /system/bin/cbd              u:object_r:cpboot-daemon_exec:s0
 /system/bin/gpsd             u:object_r:gpsd_exec:s0
 /system/bin/sswap            u:object_r:sswap_exec:s0

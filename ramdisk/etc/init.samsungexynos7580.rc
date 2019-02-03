@@ -867,10 +867,6 @@ on property:ro.debuggable=1
     write /sys/module/kgdboc/parameters/kgdboc ttyFIQ1
     write /sys/module/fiq_debugger/parameters/kgdb_enable 1
 
-# rerun macloader to fix wifi after hotspot
-on property:wlan.driver.status=unloaded
-    start macloader
-
 # Kick watchdogd if debug_level is low
 on property:ro.debug_level=0x4f4c
     start watchdogd
