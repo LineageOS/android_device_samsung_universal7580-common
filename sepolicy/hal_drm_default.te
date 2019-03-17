@@ -1,2 +1,8 @@
 # hal_drm_default
 vndbinder_use(hal_drm_default)
+
+# /dev/s5p-smem
+allow hal_drm_default secmem_device:chr_file { ioctl rw_file_perms };
+allow hal_drm_default tee:unix_stream_socket connectto;
+allow hal_drm_default efs_file:dir search;
+allow hal_drm_default cpk_efs_file:file { getattr open read };
