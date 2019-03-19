@@ -8,6 +8,9 @@ on init
     setprop installd.sdcard_manipulate_done 0
 
 on post-fs-data
+    # avoid USB crash
+    setprop persist.adb.nonblocking_ffs 0
+    setprop ro.adb.nonblocking_ffs 0
 
     # Latin SSMS feature
     mkdir /efs/SMS 0775 radio system
