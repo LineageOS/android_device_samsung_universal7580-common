@@ -17,3 +17,6 @@ persist.ril.modem.board    u:object_r:radio_prop:s0
 persist.ril.ims.eutranParam u:object_r:radio_prop:s0
 persist.ril.ims.utranParam  u:object_r:radio_prop:s0
 persist.ril.interfaceconf.failed u:object_r:radio_prop:s0
+
+# sswap
+persist.sys.swapoff     u:object_r:sswap_prop:s0

@@ -20,4 +20,4 @@ allow wifiloader wifi_efs_file:file { open read };
 
 # load .ko modules
 allow kernel self:capability sys_module;
-allow wifiloader self:capability { chown dac_override sys_module };
+allow wifiloader self:capability { chown sys_module };

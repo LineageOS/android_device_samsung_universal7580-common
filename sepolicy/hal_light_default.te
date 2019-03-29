@@ -1,5 +1,8 @@
 # hal_light_default
-allow hal_light_default sysfs_light_writable:dir search;
-allow hal_light_default sysfs_light_writable:file { getattr write open read };
+allow hal_light_default sysfs_light:dir search;
+allow hal_light_default sysfs_light:file { getattr write open read };
+allow hal_light_default sysfs_graphics:dir search;
+allow hal_light_default sysfs_graphics:file { getattr write open read };
 allow hal_light_default sysfs_sec:dir search;
+allow hal_light_default sysfs_sec:lnk_file read;
 allow hal_light_default sysfs_sec:file { getattr write open read };

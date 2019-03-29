@@ -1,0 +1,60 @@
+genfscon proc /device-tree u:object_r:proc_dt_firmware:s0
+
+genfscon proc /sys/vm/dirty_ratio               u:object_r:proc_dirty:s0
+genfscon proc /sys/vm/dirty_bytes               u:object_r:proc_dirty:s0
+genfscon proc /sys/vm/dirty_background_bytes    u:object_r:proc_dirty:s0
+
+genfscon proc /reset_reason     u:object_r:proc_reset_reason:s0
+genfscon proc /simslot_count    u:object_r:proc_simslot_count:s0
+
+# SEC devices
+#genfscon sysfs /class/sec/     u:object_r:sysfs_sec:s0
+
+# Power supply devices
+genfscon sysfs /devices/battery.20/power_supply                                     u:object_r:sysfs_usb_supply:s0
+genfscon sysfs /devices/i2c.26/i2c-8/8-0034/s2mu003-charger/power_supply            u:object_r:sysfs_usb_supply:s0
+genfscon sysfs /devices/13890000.hsi2c/i2c-2/2-0035/power_supply                    u:object_r:sysfs_usb_supply:s0
+genfscon sysfs /devices/i2c.21/i2c-4/4-0035/power_supply                            u:object_r:sysfs_usb_supply:s0
+genfscon sysfs /devices/13890000.hsi2c/i2c-2/2-0034/s2mu003-charger/power_supply    u:object_r:sysfs_usb_supply:s0
+genfscon sysfs /devices/platform/htc_battery/power_supply/ps                        u:object_r:sysfs_usb_supply:s0
+
+# Input devices
+genfscon sysfs /devices/i2c.23/i2c-5/5-0020/input/input2/enabled            u:object_r:sysfs_input:s0
+genfscon sysfs /devices/13850000.i2c/i2c-10/10-0050/input/input3/enabled    u:object_r:sysfs_input:s0
+genfscon sysfs /devices/virtual/sec/sec_touchkey/                           u:object_r:sysfs_input:s0
+genfscon sysfs /devices/virtual/sec/sec_key/                                u:object_r:sysfs_input:s0
+genfscon sysfs /devices/virtual/sec/tsp/                                    u:object_r:sysfs_input:s0
+
+# Camera
+genfscon sysfs /devices/virtual/camera/             u:object_r:sysfs_camera:s0
+
+# GPS
+genfscon sysfs /devices/virtual/sec/gps/            u:object_r:sysfs_gps:s0
+
+# Audio sysfs
+genfscon sysfs /devices/virtual/audio/earjack/      u:object_r:sysfs_jack:s0
+
+# USB lun device
+genfscon sysfs /devices/13580000.usb/gadget/lun0/   u:object_r:sysfs_android_usb:s0
+
+# MMC block device cache files
+genfscon sysfs /devices/virtual/bdi/179:0/read_ahead_kb     u:object_r:sysfs_block:s0
+genfscon sysfs /devices/virtual/bdi/179:32/read_ahead_kb    u:object_r:sysfs_block:s0
+
+# ION
+genfscon sysfs /devices/virtual/ion_cma/    u:object_r:sysfs_ion:s0
+
+# Sensors
+genfscon sysfs /devices/virtual/sensors/                            u:object_r:sysfs_sensors:s0
+genfscon sysfs /devices/13870000.hsi2c/i2c-0/0-0068/iio:device1/    u:object_r:sysfs_sensors:s0
+genfscon sysfs /devices/13870000.hsi2c/i2c-0/0-0028/iio:device0/    u:object_r:sysfs_sensors:s0
+
+genfscon sysfs /devices/13540000.dwmmc0/mmc_host/mmc0/mmc0:0001/block/mmcblk0 u:object_r:sysfs_mmc:s0
+
+genfscon sysfs /devices/virtual/net/rmnet0 u:object_r:sysfs_net:s0
+genfscon sysfs /devices/virtual/net/rmnet1 u:object_r:sysfs_net:s0
+genfscon sysfs /devices/virtual/net/rmnet2 u:object_r:sysfs_net:s0
+genfscon sysfs /devices/virtual/net/rmnet3 u:object_r:sysfs_net:s0
+
+genfscon sysfs /devices/14830000.decon_fb  u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/14800000.dsim  u:object_r:sysfs_graphics:s0

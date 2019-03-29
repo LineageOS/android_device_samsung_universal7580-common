@@ -98,9 +98,6 @@
 /data/gps/\.gpslogd\.pipe                            u:object_r:gps_data_file:s0
 /data/gps/nmeapipe                                   u:object_r:gps_data_file:s0
 
-# mobicore
-/data/misc/mcRegistry(/.*)?  u:object_r:tee_data_file:s0
-
 /data/biometrics(/.*)?       u:object_r:fingerprintd_data_file:s0
 
 # camera
@@ -108,50 +105,49 @@
 
 ####################################
 # sysfs files
-/sys/class/power_supply/battery/music -- u:object_r:sysfs_writable:s0
-/sys/class/devfreq/exynos5-busfreq-mif(/.*)? -- u:object_r:sysfs_writable:s0
-/sys/class/lcd(/.*)?         -- u:object_r:sysfs_writable:s0
-/sys/class/sec(/.*)?         -- u:object_r:sysfs_sec:s0
-
+#/sys/class/power_supply/battery/music -- u:object_r:sysfs_writable:s0
+#/sys/class/devfreq/exynos5-busfreq-mif(/.*)? -- u:object_r:sysfs_writable:s0
+#/sys/class/lcd(/.*)?         -- u:object_r:sysfs_writable:s0
 
 # bluetooth
 /sys/devices/bluetooth.[0-9]*/rfkill/rfkill0/state  u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/bluetooth.[0-9]*/rfkill/rfkill0/type   u:object_r:sysfs_bluetooth_writable:s0
-
-# camera
-/sys/devices/virtual/camera(/.*)?           u:object_r:sysfs_camera_writable:s0
+/sys/class/rfkill/rfkill0/state                     u:object_r:sysfs_bluetooth_writable:s0
+/sys/class/rfkill/rfkill0/type                      u:object_r:sysfs_bluetooth_writable:s0
 
 # CP device
 /dev/spi_boot_link              u:object_r:radio_device:s0
 
 # cbd
-/sys/devices/10f24000.mipi-lli/lli_control  u:object_r:sysfs_mipi_writable:s0
+/sys/devices/10f24000.mipi-lli/lli_control  u:object_r:sysfs_mipi:s0
 
 # gps
+/sys/class/sec/gps                                  u:object_r:sysfs_gps:s0
 /sys/devices/soc0/machine                           u:object_r:sysfs_gps:s0
 /sys/devices/soc0/revision                          u:object_r:sysfs_gps:s0
 /sys/devices/139c0000.pinctrl/gpio/gpio137/value    u:object_r:sysfs_gps:s0
 
 # rild
-/sys/devices/virtual/misc/multipdp(/.*)     u:object_r:sysfs_multipdp_writable:s0
+/sys/devices/virtual/misc/multipdp(/.*)     u:object_r:sysfs_multipdp:s0
 /dev/socket/rild2                           u:object_r:rild_socket:s0
 /dev/socket/rild-debug2                     u:object_r:rild_debug_socket:s0
 
 # mDNIe
-/sys/devices/[0-9]*\.dsim/lcd/panel/mdnie/accessibility       u:object_r:sysfs_mdnie_writable:s0
-/sys/devices/[0-9]*\.dsim/lcd/panel/mdnie/mode                u:object_r:sysfs_mdnie_writable:s0
-/sys/devices/[0-9]*\.dsim/lcd/panel/mdnie/scenario            u:object_r:sysfs_mdnie_writable:s0
-/sys/devices/[0-9]*\.dsim/lcd/panel/mdnie/lux                 u:object_r:sysfs_mdnie_writable:s0
-/sys/devices/[0-9]*\.dsim/lcd/panel/mdnie/sensorRGB           u:object_r:sysfs_mdnie_writable:s0
+/sys/devices/[0-9]*\.dsim/lcd/panel/mdnie/accessibility       u:object_r:sysfs_mdnie:s0
+/sys/devices/[0-9]*\.dsim/lcd/panel/mdnie/mode                u:object_r:sysfs_mdnie:s0
+/sys/devices/[0-9]*\.dsim/lcd/panel/mdnie/scenario            u:object_r:sysfs_mdnie:s0
+/sys/devices/[0-9]*\.dsim/lcd/panel/mdnie/lux                 u:object_r:sysfs_mdnie:s0
+/sys/devices/[0-9]*\.dsim/lcd/panel/mdnie/sensorRGB           u:object_r:sysfs_mdnie:s0
 
 # Lights
-/sys/devices/virtual/sec/sec_touchkey/brightness        u:object_r:sysfs_light_writable:s0
-/sys/devices/14800000.dsim/backlight/panel(/.*)?        u:object_r:sysfs_light_writable:s0
-/sys/class/leds(/.*)?                                   u:object_r:sysfs_light_writable:s0
-/sys/devices/virtual/sec/led(/.*)?                      u:object_r:sysfs_light_writable:s0
+/sys/devices/virtual/sec/sec_touchkey/brightness        u:object_r:sysfs_light:s0
+/sys/devices/14800000.dsim/backlight/panel(/.*)?        u:object_r:sysfs_light:s0
+/sys/class/leds(/.*)?                                   u:object_r:sysfs_light:s0
+/sys/devices/virtual/sec/led(/.*)?                      u:object_r:sysfs_light:s0
+/sys/class/lcd/panel/power_reduce                       u:object_r:sysfs_light:s0
 
 # Wifi
-/sys/module/dhd/parameters/firmware_path            u:object_r:sysfs_wifi_writable:s0
+/sys/module/dhd/parameters/firmware_path            u:object_r:sysfs_wifi:s0
 
 ####################################
 # deamons
