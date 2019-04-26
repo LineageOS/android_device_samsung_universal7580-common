@@ -1,0 +1,44 @@
+type vendor_toolbox, domain;
+
+init_daemon_domain(vendor_toolbox)
+
+# For the use of /vendor/bin/toybox_vendor from vendor init.rc fragments
+domain_trans(init, vendor_toolbox_exec, vendor_toolbox)
+
+# Allow vendor_toolbox to use these capabilities
+#allow vendor_toolbox self:capability { sys_admin };
+
+# Allow vendor_toolbox to execute /vendor/bin/toybox_vendor
+allow vendor_toolbox vendor_toolbox_exec:file execute_no_trans;
+
+# Allow vendor_toolbox to read directories in rootfs
+allow vendor_toolbox rootfs:dir r_dir_perms;
+
+# Allow vendor_toolbox to remove "security.*" xattrs from /efs
+allow vendor_toolbox {
+    app_efs_file
+    battery_efs_file
+    bluetooth_efs_file
+    efs_file
+    imei_efs_file
+    prov_efs_file
+    wifi_efs_file
+    unlabeled
+}:dir { r_dir_perms setattr };
+
+allow vendor_toolbox {
+    app_efs_file
+    baro_delta_factoryapp_efs_file
+    battery_efs_file
+    bin_nv_data_efs_file
+    bluetooth_efs_file
+    cpk_efs_file
+    efs_file
+    factorymode_factoryapp_efs_file
+    imei_efs_file
+    prov_efs_file
+    radio_factoryapp_efs_file
+    sensor_factoryapp_efs_file
+    wifi_efs_file
+    unlabeled
+}:file { r_file_perms setattr };
