@@ -49,6 +49,7 @@
 /dev/ttyBCM[0-9]*            u:object_r:bbd_device:s0
 
 /dev/esfp0                   u:object_r:fingerprint_device:s0
+/dev/vfsspi                  u:object_r:fingerprint_device:s0
 
 /dev/batch_io                u:object_r:sensor_device:s0
 /dev/ssp_sensorhub           u:object_r:sensor_device:s0
