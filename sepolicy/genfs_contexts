@@ -1,13 +1,18 @@
 genfscon proc /device-tree u:object_r:proc_dt_firmware:s0
 
-genfscon proc /sys/vm/dirty_ratio               u:object_r:proc_dirty:s0
-genfscon proc /sys/vm/dirty_bytes               u:object_r:proc_dirty:s0
-genfscon proc /sys/vm/dirty_background_bytes    u:object_r:proc_dirty:s0
+genfscon proc /sys/vm/dirty_ratio               u:object_r:proc_vm:s0
+genfscon proc /sys/vm/dirty_bytes               u:object_r:proc_vm:s0
+genfscon proc /sys/vm/dirty_background_bytes    u:object_r:proc_vm:s0
+genfscon proc /sys/vm/min_free_kbytes           u:object_r:proc_vm:s0
+
+genfscon proc /sys/vm/swappiness                u:object_r:proc_vm:s0
+genfscon proc /sys/vm/vfs_cache_pressure        u:object_r:proc_vm:s0
 
 genfscon proc /reset_reason     u:object_r:proc_reset_reason:s0
 genfscon proc /simslot_count    u:object_r:proc_simslot_count:s0
 
 # SEC devices
+genfscon proc /sec_log          u:object_r:proc_sec:s0
 #genfscon sysfs /class/sec/     u:object_r:sysfs_sec:s0
 
 # Power supply devices
@@ -24,6 +29,26 @@ genfscon sysfs /devices/13850000.i2c/i2c-10/10-0050/input/input3/enabled    u:ob
 genfscon sysfs /devices/virtual/sec/sec_touchkey/                           u:object_r:sysfs_input:s0
 genfscon sysfs /devices/virtual/sec/sec_key/                                u:object_r:sysfs_input:s0
 genfscon sysfs /devices/virtual/sec/tsp/                                    u:object_r:sysfs_input:s0
+
+# SEC GPIO input devices
+genfscon sysfs /class/secgpio_check/secgpio_check_all/gpioinit_check        u:object_r:sysfs_input:s0
+genfscon sysfs /class/secgpio_check/secgpio_check_all/gpiosleep_check       u:object_r:sysfs_input:s0
+genfscon sysfs /class/secgpio_check/secgpio_check_all/checked_sleepGPIO     u:object_r:sysfs_input:s0
+
+# Input booster
+genfscon sysfs /class/input_booster/level   u:object_r:sysfs_input:s0
+genfscon sysfs /class/input_booster/head    u:object_r:sysfs_input:s0
+genfscon sysfs /class/input_booster/tail    u:object_r:sysfs_input:s0
+
+# CPU/Scheduler devices
+genfscon sysfs /power/cpufreq_table         u:object_r:sysfs_devices_system_cpu:s0
+genfscon sysfs /power/cpufreq_min_limit     u:object_r:sysfs_devices_system_cpu:s0
+genfscon sysfs /power/cpufreq_max_limit     u:object_r:sysfs_devices_system_cpu:s0
+
+genfscon sysfs /module/cpuidle/parameters/off                       u:object_r:sysfs_devices_system_cpu:s0
+genfscon sysfs /module/cpuidle_exynos64_smp/parameters/enable_mask  u:object_r:sysfs_devices_system_cpu:s0
+
+genfscon sysfs /module/workqueue/parameters/power_efficient         u:object_r:sysfs_devices_system_cpu:s0
 
 # Camera
 genfscon sysfs /devices/virtual/camera/             u:object_r:sysfs_camera:s0

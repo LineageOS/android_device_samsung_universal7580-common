@@ -21,3 +21,6 @@ allow kernel wifi_efs_file:file r_file_perms;
 
 # /data/misc/conn/.wifiver.info
 allow kernel wifi_data_file:file rw_file_perms;
+
+# Allow kernel to search tmpfs
+allow kernel tmpfs:dir search;
