@@ -68,14 +68,6 @@ on boot
     chmod 0222 /sys/kernel/debug/tracing/trace_marker
     write /sys/kernel/debug/tracing/tracing_on 0
 
-    # Change permission for GPU
-    chown system system /sys/devices/11400000.mali/power_policy
-    chmod 0664 /sys/devices/11400000.mali/power_policy
-
-    # Change permission for touch key enabled
-    chown system system /sys/class/input/input8/enabled
-    chmod 0664 /sys/class/input/input8/enabled
-
     # Dynamic cluster hotplug
     chown system system /sys/devices/system/cpu/clusterhotplug/force_hstate
     chmod 0660 /sys/devices/system/cpu/clusterhotplug/force_hstate
@@ -87,32 +79,6 @@ on boot
     # C-STATE
     chown system system /sys/module/cpuidle/parameters/off
     chmod 0660 /sys/module/cpuidle/parameters/off
-
-    # Change permission for dvfshelper
-    chown radio system /sys/devices/11400000.mali/dvfs_table
-    chown radio system /sys/devices/11400000.mali/dvfs_min_lock
-    chown radio system /sys/devices/11400000.mali/dvfs_max_lock
-    chown radio system /sys/devices/11400000.mali/highspeed_clock
-    chown radio system /sys/devices/11400000.mali/highspeed_load
-    chmod 0664 /sys/devices/11400000.mali/dvfs_table
-    chmod 0664 /sys/devices/11400000.mali/dvfs_min_lock
-    chmod 0664 /sys/devices/11400000.mali/dvfs_max_lock
-    chmod 0664 /sys/devices/11400000.mali/highspeed_clock
-    chmod 0664 /sys/devices/11400000.mali/highspeed_load
-
-    chown radio system /sys/class/devfreq/17000020.bus_mif/available_frequencies
-    chown radio system /sys/class/devfreq/17000020.bus_mif/min_freq
-    chown radio system /sys/class/devfreq/17000020.bus_mif/max_freq
-    chmod 0664 /sys/class/devfreq/17000020.bus_mif/available_frequencies
-    chmod 0664 /sys/class/devfreq/17000020.bus_mif/min_freq
-    chmod 0664 /sys/class/devfreq/17000020.bus_mif/max_freq
-
-    chown radio system /sys/class/devfreq/17000010.bus_int/available_frequencies
-    chown radio system /sys/class/devfreq/17000010.bus_int/min_freq
-    chown radio system /sys/class/devfreq/17000010.bus_int/max_freq
-    chmod 0664 /sys/class/devfreq/17000010.bus_int/available_frequencies
-    chmod 0664 /sys/class/devfreq/17000010.bus_int/min_freq
-    chmod 0664 /sys/class/devfreq/17000010.bus_int/max_freq
 
     # CPU Idle
     chown system system /sys/module/cpuidle_exynos64_smp/parameters/enable_mask
@@ -263,21 +229,12 @@ on boot
     # CS socket
     mkdir /dev/socket/cs_socket 0770 system system
 
-    # Switch Device
-    chown system radio /sys/class/sec/switch/usb_state
-    chown system radio /sys/class/sec/switch/chg_type
-
 #for datarouter
     chown system system /dev/dun
     chown system system /dev/ttyGS0
     chown system system /dev/ttyGS1
     chown system system /dev/ttyGS2
     chown system system /dev/ttyGS3
-
-# OTG_TEST
-    chown system radio /sys/class/sec/switch/otg_test
-    chown system radio /sys/class/host_notify/usb_otg/booster
-    chmod 0660 /sys/class/host_notify/usb_otg/booster
 
  # tdmb
     chown system system /dev/tdmb
