@@ -58,12 +58,7 @@ static int check_vendor_module()
  * Camera2 wrapper fixup functions
  *******************************************************************/
 
-static char * camera2_fixup_getparams(int id __unused, const char * settings)
-{
-    bool videoMode = false;
-    const char* isoMode;
-    char *manipBuf;
-
+static char * camera2_fixup_getparams(int id __unused, const char * settings) {
     android::CameraParameters params;
     params.unflatten(android::String8(settings));
 
@@ -83,11 +78,7 @@ static char * camera2_fixup_getparams(int id __unused, const char * settings)
     return ret;
 }
 
-static char * camera2_fixup_setparams(int id __unused, const char * settings)
-{
-    bool videoMode = false;
-    const char* isoMode;
-
+static char * camera2_fixup_setparams(int id __unused, const char * settings) {
     android::CameraParameters params;
     params.unflatten(android::String8(settings));
 
