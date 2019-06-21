@@ -3,7 +3,8 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
     CameraWrapper.cpp \
-    Camera2Wrapper.cpp
+    Camera2Wrapper.cpp \
+    CallbackWorkerThread.cpp
 
 LOCAL_STATIC_LIBRARIES := libbase libarect
 LOCAL_SHARED_LIBRARIES := \
