@@ -41,6 +41,10 @@ genfscon sysfs /devices/13850000.i2c/i2c-10/10-0020/input/input3            u:ob
 genfscon sysfs /devices/i2c.20/i2c-4/4-0020/input/input2                    u:object_r:sysfs_input:s0
 genfscon sysfs /devices/virtual/fingerprint/fingerprint                     u:object_r:sysfs_input:s0
 
+# S5 NEO Input devices
+genfscon sysfs /devices/13860000.i2c/i2c-11/11-0048/input/input2            u:object_r:sysfs_input:s0
+genfscon sysfs /devices/i2c.22/i2c-4/4-0020/input/input1                    u:object_r:sysfs_input:s0
+
 # SEC GPIO input devices
 genfscon sysfs /class/secgpio_check/secgpio_check_all/gpioinit_check        u:object_r:sysfs_input:s0
 genfscon sysfs /class/secgpio_check/secgpio_check_all/gpiosleep_check       u:object_r:sysfs_input:s0
