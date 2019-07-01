@@ -100,3 +100,6 @@ genfscon sysfs /devices/virtual/net/rmnet3 u:object_r:sysfs_net:s0
 
 genfscon sysfs /devices/14830000.decon_fb  u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/14800000.dsim  u:object_r:sysfs_graphics:s0
+
+# video4linux
+genfscon sysfs /devices/12800000.mfc0/video4linux/  u:object_r:sysfs_v4l:s0

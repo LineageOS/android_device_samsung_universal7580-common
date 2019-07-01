@@ -45,6 +45,7 @@ type sysfs_graphics, sysfs_type, fs_type, mlstrustedobject;
 type sysfs_ion, sysfs_type, fs_type, mlstrustedobject;
 type sysfs_block, sysfs_type, fs_type, mlstrustedobject;
 type sysfs_jack, sysfs_type, fs_type, mlstrustedobject;
+type sysfs_v4l, sysfs_type, fs_type, mlstrustedobject;
 
 allow sysfs_type tmpfs:filesystem associate;
 
