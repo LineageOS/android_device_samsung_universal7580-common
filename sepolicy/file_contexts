@@ -145,6 +145,7 @@
 /sys/class/leds(/.*)?                                   u:object_r:sysfs_light:s0
 /sys/devices/virtual/sec/led(/.*)?                      u:object_r:sysfs_light:s0
 /sys/class/lcd/panel/power_reduce                       u:object_r:sysfs_light:s0
+/sys/devices/i2c.24/i2c-6/6-0030/leds(/.*)?             u:object_r:sysfs_light:s0
 
 # Wifi
 /sys/module/dhd/parameters/firmware_path            u:object_r:sysfs_wifi:s0
