@@ -70,6 +70,7 @@ allow init sysfs_mmc:file { w_file_perms setattr };
 allow init sysfs_net:file rw_file_perms;
 allow init sysfs_graphics:file { rw_file_perms setattr };
 allow init sysfs_light:file { rw_file_perms setattr };
+allow init sysfs_light:lnk_file { rw_file_perms setattr };
 allow init sysfs_mdnie:file { setattr };
 allow init sysfs_sec:file { rw_file_perms setattr };
 allow init sysfs_sec:lnk_file read;
