@@ -1,5 +1,3 @@
-# mobicore
-
 # /efs
 allow tee { efs_file prov_efs_file }:dir r_dir_perms;
 allow tee { efs_file prov_efs_file }:file r_file_perms;

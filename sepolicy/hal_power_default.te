@@ -1,8 +1,6 @@
-# hal_power_default
-
 # Input devices
-allow hal_power_default sysfs_input:dir { open read search };
-allow hal_power_default sysfs_input:file { rw_file_perms };
+allow hal_power_default sysfs_input:dir r_dir_perms;
+allow hal_power_default sysfs_input:file rw_file_perms;
 
 # CPU devices
 allow hal_power_default sysfs_devices_system_cpu:dir search;

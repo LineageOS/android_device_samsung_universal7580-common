@@ -25,6 +25,7 @@ type proc_vm, fs_type, proc_type;
 type proc_dt_firmware, fs_type, proc_type;
 type proc_reset_reason, fs_type, proc_type;
 type proc_simslot_count, fs_type, proc_type;
+type proc_input_devices, fs_type, proc_type;
 type proc_sec, fs_type, proc_type;
 
 ### sysfs types
@@ -46,8 +47,6 @@ type sysfs_ion, sysfs_type, fs_type, mlstrustedobject;
 type sysfs_block, sysfs_type, fs_type, mlstrustedobject;
 type sysfs_jack, sysfs_type, fs_type, mlstrustedobject;
 type sysfs_v4l, sysfs_type, fs_type, mlstrustedobject;
-
-allow sysfs_type tmpfs:filesystem associate;
 
 ### data types
 type display_vendor_data_file, file_type, data_file_type;

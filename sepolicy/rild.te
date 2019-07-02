@@ -1,17 +1,13 @@
 # Allow rild to change perms
-allow rild self:capability { chown };
+allow rild self:capability chown;
 
 # Allow additiional efs access
 allow rild bin_nv_data_efs_file:file create_file_perms;
-allow rild imei_efs_file:dir r_dir_perms;
-allow rild imei_efs_file:file r_file_perms;
-allow rild app_efs_file:dir r_dir_perms;
-allow rild app_efs_file:file r_file_perms;
+r_dir_file(rild, imei_efs_file);
+r_dir_file(rild, app_efs_file);
 
-# /dev
-allow rild audioserver:dir r_dir_perms;
-# /proc/<pid>/cmdline
-allow rild audioserver:file r_file_perms;
+# audioserver
+r_dir_file(rild, audioserver);
 
 # /dev/mbin0
 allow rild block_device:dir r_dir_perms;
@@ -28,14 +24,12 @@ allow rild sysfs_input:file rw_file_perms;
 # /proc/sys/net/ipv6/conf/*/accept_ra_defrtr
 allow rild proc_net:file rw_file_perms;
 
-allow rild gpsd:dir r_dir_perms;
-allow rild gpsd:file r_file_perms;
+r_dir_file(rild, gpsd);
 
 allow rild proc_qtaguid_stat:file r_file_perms;
 
 # rild reads /proc/pid/cmdline of mediaserver
-allow rild mediaserver:dir { open read search getattr };
-allow rild mediaserver:file { open read getattr };
+r_dir_file(rild, mediaserver);
 
 # /data/misc/radio/*
 allow rild radio_data_file:dir rw_dir_perms;
@@ -44,10 +38,10 @@ allow rild radio_data_file:file create_file_perms;
 allow rild radio_data_file:lnk_file r_file_perms;
 
 # sdcard/SDET_PLMN/input/MNCMCC.txt
-allow rild storage_file:dir { r_dir_perms };
-allow rild storage_file:lnk_file { r_file_perms };
-allow rild mnt_user_file:dir { r_dir_perms };
-allow rild mnt_user_file:lnk_file { r_file_perms };
+allow rild storage_file:dir r_dir_perms;
+allow rild storage_file:lnk_file r_file_perms;
+allow rild mnt_user_file:dir r_dir_perms;
+allow rild mnt_user_file:lnk_file r_file_perms;
 
 # Modem firmware download
 allow rild radio_block_device:blk_file r_file_perms;
@@ -59,4 +53,4 @@ set_prop(modemloader, radio_prop)
 allow rild knox_device:chr_file r_file_perms;
 
 # /data/media/0
-allow rild media_rw_data_file:dir { open read search };
+allow rild media_rw_data_file:dir r_dir_perms;

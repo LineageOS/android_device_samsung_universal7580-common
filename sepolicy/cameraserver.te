@@ -2,14 +2,11 @@
 allow cameraserver camera_device:chr_file rw_file_perms;
 
 # /sys/devices/virtual/camera/*/*_camfw
-allow cameraserver sysfs_camera:file { rw_file_perms open getattr };
-
-# searching for syses nodes
 allow cameraserver sysfs_camera:dir search;
+allow cameraserver sysfs_camera:file rw_file_perms;
 
 # /data/camera/ISP_CV
 allow cameraserver camera_data_file:file r_file_perms;
 
 # /data/media(/.*)?
-allow cameraserver media_rw_data_file:dir r_dir_perms;
-allow cameraserver media_rw_data_file:file r_file_perms;
+r_dir_file(cameraserver, media_rw_data_file);

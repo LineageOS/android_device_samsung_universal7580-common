@@ -2,8 +2,8 @@
 unix_socket_connect(audioserver, property, rild)
 
 # /efs/maxim
-allow audioserver { efs_file sec_efs_file }:dir r_dir_perms;
-allow audioserver { efs_file sec_efs_file }:file r_file_perms;
+r_dir_file(audioserver, efs_file);
+r_dir_file(audioserver, sec_efs_file);
 
 # TFA98xx amplifier
 allow audioserver amplifier_device:chr_file rw_file_perms;

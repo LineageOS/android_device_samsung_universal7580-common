@@ -1,6 +1,6 @@
 # /dev/mbin0
 allow system_server emmcblk_device:dir search;
-allow system_server emmcblk_device:blk_file { getattr ioctl open read write };
+allow system_server emmcblk_device:blk_file rw_file_perms;
 
 # /efs
 allow system_server efs_file:dir r_dir_perms;
@@ -26,7 +26,7 @@ allow system_server app_efs_file:dir r_dir_perms;
 allow system_server app_efs_file:file r_file_perms;
 
 # WifiMachine
-allow system_server self:capability { sys_module };
+allow system_server self:capability sys_module;
 allow system_server wifi_efs_file:dir r_dir_perms;
 allow system_server wifi_efs_file:file r_file_perms;
 
@@ -34,9 +34,6 @@ allow system_server wifi_efs_file:file r_file_perms;
 allow system_server sysfs_mdnie:lnk_file rw_file_perms;
 #allow system_server sysfs_mdnie:dir rw_dir_perms;
 allow system_server sysfs_mdnie:file rw_file_perms;
-
-# Lights
-allow system_server sysfs_light:file rw_file_perms;
 
 # memtrack HAL
 allow system_server debugfs:dir r_dir_perms;
@@ -52,12 +49,14 @@ allow system_server sysfs_sensors:file rw_file_perms;
 allow system_server gps_data_file:file create_file_perms;
 
 # Bluetooth buildprop
-allow system_server bluetooth_prop:file read;
+get_prop(system_server, bluetooth_prop)
 
 # Grpahics sysfs
 allow system_server sysfs_graphics:file rw_file_perms;
 
 # Input sysfs
 allow system_server sysfs_input:file rw_file_perms;
+
+allow system_server proc_input_devices:file r_file_perms;
 
 unix_socket_connect(system_server, property, gpsd)

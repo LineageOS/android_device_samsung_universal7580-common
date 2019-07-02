@@ -7,15 +7,11 @@ allow init efs_file:dir  mounton;
 # /dev/block/mmcblk0p[0-9]
 allow init emmcblk_device:blk_file rw_file_perms;
 
-allow init block_device:lnk_file { setattr };
+allow init block_device:lnk_file setattr;
 allow init tmpfs:lnk_file create_file_perms;
 
 # /sys/class/power_supply/battery and /sys/class/android_usb/android0
 allow init sysfs_usb_supply:file { rw_file_perms setattr };
-
-# Shim libs
-allow init cameraserver:process noatsecure;
-allow init hal_fingerprint_default:process noatsecure;
 
 # /data
 allow init sdcardd_exec:file r_file_perms;
@@ -30,8 +26,8 @@ allow init sysfs_ion:file setattr;
 allow init sysfs_android_usb:file setattr;
 
 # read/chown mDNIE symlinks
-allow init sysfs_mdnie:lnk_file { read setattr };
-allow init sysfs_mdnie:file { open write };
+allow init sysfs_mdnie:lnk_file { r_file_perms setattr };
+allow init sysfs_mdnie:file rw_file_perms;
 
 # read/chown camera firmware
 allow init sysfs_camera:file { relabelto setattr };
@@ -71,7 +67,7 @@ allow init sysfs_net:file rw_file_perms;
 allow init sysfs_graphics:file { rw_file_perms setattr };
 allow init sysfs_light:file { rw_file_perms setattr };
 allow init sysfs_light:lnk_file { rw_file_perms setattr };
-allow init sysfs_mdnie:file { setattr };
+allow init sysfs_mdnie:file setattr;
 allow init sysfs_sec:file { rw_file_perms setattr };
 allow init sysfs_sec:lnk_file read;
 allow init sysfs_sensors:file { rw_file_perms setattr };

@@ -1,4 +1,2 @@
-# hal_fingerprint_default
 allow hal_fingerprint_default sysfs_input:dir search;
 allow hal_fingerprint_default sysfs_input:file rw_file_perms;
-

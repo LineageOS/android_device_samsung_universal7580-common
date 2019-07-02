@@ -17,8 +17,6 @@
 /dev/media[0-3]*             u:object_r:camera_device:s0
 /dev/m2m1shot_jpeg           u:object_r:camera_device:s0
 
-/dev/mtp_usb*                u:object_r:mtp_device:s0
-
 /dev/__cbd_msg_              u:object_r:mif_device:s0
 /dev/umts.*                  u:object_r:mif_device:s0
 /dev/ehci_power              u:object_r:mif_device:s0

@@ -1,5 +1,5 @@
 # allow hal_fingerprint_default to communicate with various devices
-binder_call(system_app, hal_fingerprint_default);
+binder_call(system_app, hal_fingerprint_default)
 
 # kernel fp device
 allow hal_fingerprint_default fingerprint_device:chr_file rw_file_perms;

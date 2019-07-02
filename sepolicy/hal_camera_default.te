@@ -1,4 +1,3 @@
-# hal_camera_default
 allow hal_camera_default sysfs_camera:dir search;
 allow hal_camera_default sysfs_camera:file rw_file_perms;
 
