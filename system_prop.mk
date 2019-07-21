@@ -25,8 +25,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # HWC
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.hwc.force_gpu=1 \
-    ro.sf.disable_triple_buffer=0
+    debug.sf.latch_unsignaled=1
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
