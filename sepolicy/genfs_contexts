@@ -21,18 +21,22 @@ genfscon proc /sec_log          u:object_r:proc_sec:s0
 genfscon sysfs /devices/battery.20/power_supply                                     u:object_r:sysfs_usb_supply:s0
 genfscon sysfs /devices/i2c.26/i2c-8/8-0034/s2mu003-charger/power_supply            u:object_r:sysfs_usb_supply:s0
 genfscon sysfs /devices/13890000.hsi2c/i2c-2/2-0035/power_supply                    u:object_r:sysfs_usb_supply:s0
-genfscon sysfs /devices/i2c.21/i2c-4/4-0035/power_supply                            u:object_r:sysfs_usb_supply:s0
-genfscon sysfs /devices/13890000.hsi2c/i2c-2/2-0034/s2mu003-charger/power_supply    u:object_r:sysfs_usb_supply:s0
 genfscon sysfs /devices/platform/htc_battery/power_supply/ps                        u:object_r:sysfs_usb_supply:s0
 
 # Input devices
-genfscon sysfs /devices/i2c.23/i2c-5/5-0020/input/input2/enabled            u:object_r:sysfs_input:s0
-genfscon sysfs /devices/13850000.i2c/i2c-10/10-0050/input/input3/enabled    u:object_r:sysfs_input:s0
 genfscon sysfs /devices/virtual/sec/sec_touchkey                            u:object_r:sysfs_input:s0
 genfscon sysfs /devices/virtual/sec/sec_key                                 u:object_r:sysfs_input:s0
 genfscon sysfs /devices/virtual/sec/tsp                                     u:object_r:sysfs_input:s0
 genfscon sysfs /devices/virtual/secgpio_check                               u:object_r:sysfs_input:s0
 genfscon sysfs /devices/virtual/input                                       u:object_r:sysfs_input:s0
+
+# A3 power devices
+genfscon sysfs /devices/i2c.21/i2c-4/4-0035/power_supply                            u:object_r:sysfs_usb_supply:s0
+genfscon sysfs /devices/13890000.hsi2c/i2c-2/2-0034/s2mu003-charger/power_supply    u:object_r:sysfs_usb_supply:s0
+
+# A3 Input devices
+genfscon sysfs /devices/13850000.i2c/i2c-10/10-0050/input/input3            u:object_r:sysfs_input:s0
+genfscon sysfs /devices/i2c.23/i2c-5/5-0020/input/input2                    u:object_r:sysfs_input:s0
 
 # A5 power supply devices
 genfscon sysfs /devices/battery.43/power_supply                                     u:object_r:sysfs_usb_supply:s0
