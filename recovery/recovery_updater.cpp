@@ -1,0 +1,79 @@
+/*
+ * Copyright (C) 2019, The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <android-base/properties.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+#include "edify/expr.h"
+#include "otautil/error_code.h"
+#include "updater/install.h"
+
+/**
+ * for more informations
+ * see https://android.stackexchange.com/questions/202491/what-do-the-numbers-and-letters-in-the-samsung-firmware-mean/202494#202494
+ */
+bool compareBootloader(std::string a, std::string b) {
+    /* compare model */
+    if (a.substr(0,5) != b.substr(0,5)) {
+        return false;
+    }
+
+    /* compare actual bootloader version */
+    if (std::stoul(a.substr(a.length() - 5, 2), 0, 16) < std::stoul(b.substr(b.length() - 5, 2), 0, 16)) {
+        return false;
+    }
+
+    return true;
+}
+
+/* compare_bootloader("BL_VERSION", "BL_VERSION", ...) */
+Value * CompareBootloaderFn(const char *name, State *state,
+                          const std::vector<std::unique_ptr<Expr>>& argv) {
+    std::string bootloader = android::base::GetProperty("ro.bootloader", "");
+
+    if (bootloader.empty()) {
+        return ErrorAbort(state, kFreadFailure, "%s() failed to read current Bootloader version",
+                name);
+    }
+
+    std::vector<std::string> args;
+    if (!ReadArgs(state, argv, &args)) {
+        return ErrorAbort(state, kArgsParsingFailure, "%s() error parsing arguments", name);
+    }
+
+    for (auto& bl_version : args) {
+        uiPrintf(state, "Comparing bootloader version %s to %s",
+                bl_version.c_str(), bootloader.c_str());
+        if (compareBootloader(bl_version, bootloader)) {
+            return StringValue(strdup("1"));
+        }
+    }
+
+    return StringValue(strdup("0"));
+}
+
+void Register_librecovery_updater_exynos() {
+    RegisterFunction("samsung.compare_bootloader", CompareBootloaderFn);
+}
