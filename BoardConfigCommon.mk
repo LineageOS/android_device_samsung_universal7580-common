@@ -184,6 +184,7 @@ BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/etc/fstab.recovery
 
 # SELinux
+#SELINUX_IGNORE_NEVERALLOWS := true
 BOARD_SEPOLICY_DIRS += device/samsung/universal7580-common/sepolicy 
 BOARD_SEPOLICY_VERS := $(PLATFORM_SDK_VERSION).0
 
