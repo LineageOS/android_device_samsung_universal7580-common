@@ -74,4 +74,7 @@ patchelf --replace-needed libgui.so libsensor.so $BLOB_ROOT/bin/gpsd
 patchelf --replace-needed libprotobuf-cpp-full.so libprotobuf-cpp-fl26.so $BLOB_ROOT/lib/libsec-ril.so
 patchelf --replace-needed libprotobuf-cpp-full.so libprotobuf-cpp-fl26.so $BLOB_ROOT/lib/libsec-ril-dsds.so
 
+# replace SSLv3_client_method with SSLv23_method
+c=`hexdump -ve '1/1 "%.2X"' $BLOB_ROOT/bin/gpsd`; echo -n "$c" | sed 's/53534C76335F636C69656E745F6D6574686F6400/53534C7632335F6D6574686F6400000000000000/g' | xxd -r -p > $BLOB_ROOT/bin/gpsd
+
 "${MY_DIR}/setup-makefiles.sh"
