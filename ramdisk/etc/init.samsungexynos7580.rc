@@ -814,11 +814,6 @@ on property:ro.debug_level=0x4f4c
     start watchdogd
 
 # LPM
-on property:ro.bootmode=charger
-    mount ext4 /dev/block/platform/13540000.dwmmc0/by-name/SYSTEM /system wait ro
-    wait /dev/block/platform/13540000.dwmmc0/by-name/EFS
-    mount ext4 /dev/block/platform/13540000.dwmmc0/by-name/EFS /efs nosuid nodev noatime noauto_da_alloc,discard,journal_async_commit
-
 service charger /charger
     class charger
     critical
