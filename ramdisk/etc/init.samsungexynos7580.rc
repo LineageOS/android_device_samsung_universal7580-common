@@ -798,7 +798,7 @@ on property:ro.debug_level=0x4f4c
     start watchdogd
 
 # LPM
-service charger /charger
+service charger /system/bin/charger
     class charger
     critical
     seclabel u:r:charger:s0
