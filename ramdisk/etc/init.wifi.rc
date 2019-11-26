@@ -43,7 +43,7 @@ on boot
     #write /proc/sys/net/ipv4/tcp_adv_win_scale 2
 
 # Run deferred initcalls of builtin kernel modules (bcmdhd)
-service wifiloader /system/bin/wifiloader
+service wifiloader /vendor/bin/wifiloader
     class main
     oneshot
 
