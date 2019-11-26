@@ -793,7 +793,7 @@ on fs
     chown system radio /sys/class/sensors/irled_remote/irled_send_result
 
 # GPS
-service gpsd /system/bin/gpsd -c /system/etc/gps.xml
+service gpsd /vendor/bin/gpsd -c /system/etc/gps.xml
     class main
     user gps
     group system wakelock inet net_raw
@@ -828,7 +828,7 @@ on charger
 
 
 # DRK/CS service
-service cs_service /system/bin/cs
+service cs_service /vendor/bin/cs
     class main
     user system
     group system
@@ -838,7 +838,7 @@ on property:sys.mobicoredaemon.enable=true
     start cs_service
     write /proc/iccc_ready 1
 
-service sswap /system/bin/sswap -s -f 1024
+service sswap /vendor/bin/sswap -s -f 1024
       class core
       user root
       group root
