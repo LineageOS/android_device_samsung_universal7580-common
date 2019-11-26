@@ -1,7 +1,7 @@
 #### wifiloader
 #
 type wifiloader, domain;
-type wifiloader_exec, exec_type, file_type;
+type wifiloader_exec, exec_type, file_type, vendor_file_type;
 
 init_daemon_domain(wifiloader)
 unix_socket_connect(wifiloader, property, init)

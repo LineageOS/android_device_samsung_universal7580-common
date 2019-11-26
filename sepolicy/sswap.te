@@ -1,5 +1,5 @@
 type sswap, domain;
-type sswap_exec, exec_type, file_type;
+type sswap_exec, exec_type, file_type, vendor_file_type;
 type sswap_device, dev_type;
 
 init_daemon_domain(sswap);
