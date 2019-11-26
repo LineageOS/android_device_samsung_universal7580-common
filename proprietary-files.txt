@@ -7,8 +7,8 @@ lib/libuniplugin.so
 lib/libsensorlistener.so
 
 # GPS
-bin/gpsd
-bin/gps.cer
+bin/gpsd:vendor/bin/gpsd
+bin/gps.cer:vendor/bin/gps.cer
 lib/hw/gps.default.so:lib/hw/gps.universal7580.so
 lib/libwrappergps.so
 lib/libfloatingfeature.so
@@ -17,7 +17,7 @@ lib/libfloatingfeature.so
 vendor/lib/egl/libGLES_mali.so
 
 # Mobicore
-bin/cs
+bin/cs:vendor/bin/cs
 
 # RIL
 lib/libsec-ril.so
