@@ -14,7 +14,7 @@ lib/libhwcutils.so
 lib/libmpp.so
 
 # Mobicore
-bin/mcDriverDaemon
+bin/mcDriverDaemon:vendor/bin/mcDriverDaemon
 lib/libMcClient.so
 lib/libMcRegistry.so
 
