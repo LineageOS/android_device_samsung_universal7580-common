@@ -47,3 +47,7 @@ allow gpsd node:tcp_socket node_bind;
 
 # sec sysfs files
 #allow gpsd sysfs_sec:dir search;
+
+# hwservicemanager ready prop
+allow gpsd hwservicemanager:binder call;
+allow gpsd hwservicemanager_prop:file { open read getattr};
