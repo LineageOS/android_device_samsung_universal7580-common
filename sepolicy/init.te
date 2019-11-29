@@ -44,7 +44,10 @@ allow init sysfs_bluetooth_writable:file setattr;
 
 # GPS permissions
 allow init sysfs_gps:lnk_file read;
-allow init sysfs_gps:file setattr;
+allow init sysfs_gps:file { rw_file_perms setattr };
+allow init gps_data_file:fifo_file write;
+allow init gps_data_file:file lock;
+allow init gps_device:chr_file { open read write };
 
 # CPU permissions
 allow init sysfs_devices_system_cpu:file rw_file_perms;
