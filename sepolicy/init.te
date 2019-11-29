@@ -49,6 +49,10 @@ allow init sysfs_gps:file setattr;
 # CPU permissions
 allow init sysfs_devices_system_cpu:file rw_file_perms;
 
+# sswap permissions
+allow init sswap_device:blk_file write;
+allow init sysfs_sswap:file { open write };
+
 # Block device sysfs
 allow init sysfs_block:file rw_file_perms;
 
