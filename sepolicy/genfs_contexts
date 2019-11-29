@@ -10,6 +10,7 @@ genfscon proc /sys/vm/vfs_cache_pressure        u:object_r:proc_vm:s0
 
 genfscon proc /reset_reason     u:object_r:proc_reset_reason:s0
 genfscon proc /simslot_count    u:object_r:proc_simslot_count:s0
+genfscon proc /last_kmsg        u:object_r:proc_last_kmsg:s0
 
 genfscon proc /bus/input/devices    u:object_r:proc_input_devices:s0
 
