@@ -27,6 +27,7 @@ type proc_reset_reason, fs_type, proc_type;
 type proc_simslot_count, fs_type, proc_type;
 type proc_input_devices, fs_type, proc_type;
 type proc_sec, fs_type, proc_type;
+type proc_last_kmsg, fs_type, proc_type;
 
 ### sysfs types
 #type sysfs_writable, fs_type, sysfs_type, mlstrustedobject;

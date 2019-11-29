@@ -79,6 +79,7 @@ allow init proc_reset_reason:file rw_file_perms;
 allow init proc_vm:file rw_file_perms;
 allow init proc_simslot_count:file rw_file_perms;
 allow init proc_sec:file rw_file_perms;
+allow init proc_last_kmsg:file { rw_file_perms setattr };
 
 # Sockets
 allow init socket_device:sock_file { read write getattr setattr create unlink };
