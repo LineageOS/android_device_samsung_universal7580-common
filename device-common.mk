@@ -159,7 +159,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcamera_client_shim \
     libexynoscamera_shim \
-    libExynosOMX_shim \
     libstagefright_shim \
     libui_shim
 
@@ -195,7 +194,6 @@ PRODUCT_PACKAGES += \
 
 # Overriden service definition
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/init/android.hardware.media.omx@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.media.omx@1.0-service.rc \
     $(LOCAL_PATH)/configs/init/mediaserver.rc:system/etc/init/mediaserver.rc
 
 # Properties
