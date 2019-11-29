@@ -1,3 +1,6 @@
+# /proc/last_kmsg
+allow system_server proc_last_kmsg:file r_file_perms;
+
 # /efs
 allow system_server efs_file:dir r_dir_perms;
 
