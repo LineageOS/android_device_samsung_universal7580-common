@@ -4,6 +4,9 @@ allow init debugfs:dir mounton;
 # Mount EFS on /efs
 allow init efs_file:dir  mounton;
 
+# Mount CPEFS on /cpefs
+allow init sec_efs_file:dir mounton;
+
 # /dev/block/mmcblk0p[0-9]
 allow init emmcblk_device:blk_file rw_file_perms;
 
@@ -52,6 +55,9 @@ allow init gps_device:chr_file { open read write };
 # CPU permissions
 allow init sysfs_devices_system_cpu:file rw_file_perms;
 
+# umts permissions
+allow init mif_device:chr_file rw_file_perms;
+
 # sswap permissions
 allow init sswap_device:blk_file write;
 allow init sysfs_sswap:file { open write };
@@ -82,10 +88,10 @@ allow init sysfs_sensors:lnk_file read;
 allow init sysfs_multipdp:file setattr;
 
 # Proc files
-allow init proc_reset_reason:file rw_file_perms;
+allow init proc_reset_reason:file { rw_file_perms setattr };
 allow init proc_vm:file rw_file_perms;
 allow init proc_simslot_count:file rw_file_perms;
-allow init proc_sec:file rw_file_perms;
+allow init proc_sec:file { rw_file_perms setattr };
 allow init proc_last_kmsg:file { rw_file_perms setattr };
 
 # Sockets
