@@ -70,8 +70,6 @@ allow init sysfs_jack:file setattr;
 
 unix_socket_connect(init, property, rild)
 
-allow init { domain -lmkd -crash_dump }:process noatsecure;
-
 # Allow access to /proc/device-tree nodes
 r_dir_file(init, proc_dt_firmware)
 
