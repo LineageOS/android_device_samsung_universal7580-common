@@ -19,10 +19,6 @@ vendor/lib/egl/libGLES_mali.so
 # Mobicore
 bin/cs
 
-# RIL
-lib/libsec-ril.so
-lib/libsec-ril-dsds.so
-
 # protobuf
 lib/libprotobuf-cpp-fl26.so|f2436050b38e5acb63d36ad7b24a0c2612d68749
 
