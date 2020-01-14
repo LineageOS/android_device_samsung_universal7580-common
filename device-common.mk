@@ -196,6 +196,13 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0 \
     android.hardware.wifi@1.0-impl
 
+# Wrapper to provide libcore.util.TimeZoneFinder for gapps SUW
+PRODUCT_PACKAGES += \
+    libcore-util-TimeZoneFinder
+
+PRODUCT_BOOT_JARS += \
+    libcore-util-TimeZoneFinder
+
 # Overriden service definition
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/init/mediaserver.rc:system/etc/init/mediaserver.rc
