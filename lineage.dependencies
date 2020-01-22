@@ -22,9 +22,5 @@
     {
         "repository": "android_kernel_samsung_universal7580",
         "target_path": "kernel/samsung/universal7580"
-    },
-    {
-        "repository": "android_packages_resources_devicesettings",
-        "target_path": "packages/resources/devicesettings"
     }
 ]
