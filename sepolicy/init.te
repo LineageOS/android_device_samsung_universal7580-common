@@ -7,6 +7,9 @@ allow init efs_file:dir  mounton;
 # Mount CPEFS on /cpefs
 allow init sec_efs_file:dir mounton;
 
+# Allow init to bind mount over system files
+allow init system_file:file mounton;
+
 # /dev/block/mmcblk0p[0-9]
 allow init emmcblk_device:blk_file rw_file_perms;
 
