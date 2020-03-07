@@ -274,6 +274,9 @@ on fs
 # Fingerprint
     mkdir /dev/validity 0770 system system
 
+# GnssConfiguration doesn't actually look at gps.conf, just the debug file
+    mount none /system/etc/gps.conf /system/etc/gps_debug.conf bind
+
  # create data/gps for GPS daemon
     chown root system /dev/ttySAC0
     chmod 0660 /dev/ttySAC0
