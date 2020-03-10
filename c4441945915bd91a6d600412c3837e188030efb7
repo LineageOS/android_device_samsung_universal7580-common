@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "409eaf15_a85378bf",
+        "filename": "ramdisk/etc/init.recovery.samsungexynos7580.rc",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 19057
+      },
+      "writtenOn": "2020-03-10T15:53:22Z",
+      "side": 1,
+      "message": "I\u0027m not sure about this, I added it to allow opengapps to install as it expects system to be lowercase?",
+      "revId": "c4441945915bd91a6d600412c3837e188030efb7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
