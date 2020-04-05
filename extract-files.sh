@@ -65,9 +65,6 @@ setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${LINEAGE_ROOT}" true "${CLEAN_VEND
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" \
         "${KANG}" --section "${SECTION}"
 
-extract "${MY_DIR}/proprietary-files-bsp.txt" "${SRC}" \
-        "${KANG}" --section "${SECTION}"
-
 # Fix proprietary blobs
 BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary
 patchelf --replace-needed libgui.so libsensor.so $BLOB_ROOT/bin/gpsd

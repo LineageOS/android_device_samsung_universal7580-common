@@ -200,10 +200,8 @@ PRODUCT_COPY_FILES += \
 -include $(LOCAL_PATH)/system_prop.mk
 
 # call Samsung LSI board support package
-ifneq ($(WITH_EXYNOS_BSP),)
 $(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)
 $(call inherit-product, hardware/samsung_slsi/exynos7580/exynos7580.mk)
-endif
 
 # call the proprietary setup
 $(call inherit-product, vendor/samsung/universal7580-common/universal7580-common-vendor.mk)
