@@ -108,6 +108,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl
 
+# Mobicore
+PRODUCT_PACKAGES += \
+    mcDriverDaemon \
+    libMcClient \
+    libMcRegistry
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service.exynos
