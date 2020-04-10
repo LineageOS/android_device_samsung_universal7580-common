@@ -42,6 +42,10 @@ public:
 	status_t lock(buffer_handle_t handle,
 			uint32_t usage, const Rect& bounds, void** vaddr);
 
+	status_t lock(buffer_handle_t handle,
+			uint32_t usage, const Rect& bounds, void** vaddr,
+			 int32_t* outBytesPerPixel, int32_t* outBytesPerStride);
+
 	status_t lockYCbCr(buffer_handle_t handle,
 			uint32_t usage, const Rect& bounds, android_ycbcr *ycbcr);
 

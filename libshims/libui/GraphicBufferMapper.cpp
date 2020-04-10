@@ -100,6 +100,18 @@ status_t GraphicBufferMapper::lock(buffer_handle_t handle,
 	return err;
 }
 
+status_t GraphicBufferMapper::lock(buffer_handle_t handle,
+		uint32_t usage, const Rect& bounds, void** vaddr,
+		int32_t* outBytesPerPixel, int32_t* outBytesPerStride)
+{
+	ATRACE_CALL();
+	status_t err;
+
+    (void)outBytesPerPixel;
+    (void)outBytesPerStride;
+	return lock(handle, usage, bounds, vaddr);
+}
+
 status_t GraphicBufferMapper::lockYCbCr(buffer_handle_t handle,
 		uint32_t usage, const Rect& bounds, android_ycbcr *ycbcr)
 {
