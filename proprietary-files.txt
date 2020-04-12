@@ -22,9 +22,6 @@ bin/cs:vendor/bin/cs
 # protobuf
 lib/libprotobuf-cpp-fl26.so|f2436050b38e5acb63d36ad7b24a0c2612d68749
 
-# OMX - from a3xeltexx (A310FXXU4CRG2)
-lib/omx/libOMX.Exynos.WMV.Decoder.so|829ee8de0450615bf573c418d5205de3c33b50a1
-
 # Widevine
 vendor/lib/mediadrm/libdrmclearkeyplugin.so
 lib/libstagefright_hdcp.so
