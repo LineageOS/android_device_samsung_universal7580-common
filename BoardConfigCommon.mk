@@ -189,3 +189,7 @@ BOARD_SEPOLICY_VERS := $(PLATFORM_SDK_VERSION).0
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+
+# Shim
+TARGET_LD_SHIM_LIBS += \
+    /system/bin/mediaserver|/vendor/lib/libstagefright_shim.so

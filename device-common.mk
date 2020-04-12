@@ -198,10 +198,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf \
     android.hardware.wifi@1.0-service.legacy
 
-# Overriden service definition
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/init/mediaserver.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/mediaserver.rc
-
 # Properties
 -include $(LOCAL_PATH)/system_prop.mk
 
