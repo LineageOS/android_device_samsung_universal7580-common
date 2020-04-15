@@ -209,24 +209,6 @@ on boot
 # IMEI folder
     mkdir /efs/imei 0775 radio system
 
-    # DRK permission
-    mkdir /efs/prov 0770 radio system
-    mkdir /efs/prov_data 0770 radio system
-    chown radio system /efs/prov_data/dev_root
-    chmod 0770 /efs/prov_data/dev_root
-    chown radio system /efs/prov_data/knox
-    chmod 0770 /efs/prov_data/knox
-    chown radio system /efs/prov_data/dev_root/dev_root.dat
-    chmod 0640 /efs/prov_data/dev_root/dev_root.dat
-    chown radio system /efs/prov/libdevkm.lock
-    chmod 0660 /efs/prov/libdevkm.lock
-    write /efs/prov/ffffffff00000000000000000000000c.tlbin 0
-    chown radio system /efs/prov/ffffffff00000000000000000000000c.tlbin
-    chmod 0660 /efs/prov/ffffffff00000000000000000000000c.tlbin
-
-    # CS socket
-    mkdir /dev/socket/cs_socket 0770 system system
-
 #for datarouter
     chown system system /dev/dun
     chown system system /dev/ttyGS0
@@ -825,18 +807,6 @@ on charger
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor powersave
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor powersave
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor powersave
-
-
-# DRK/CS service
-service cs_service /vendor/bin/cs
-    class main
-    user system
-    group system
-    disabled
-
-on property:sys.mobicoredaemon.enable=true
-    start cs_service
-    write /proc/iccc_ready 1
 
 service sswap /vendor/bin/sswap -s -f 1024
       class core
