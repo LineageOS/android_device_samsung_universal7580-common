@@ -1,3 +1,5 @@
+# all unpinned blobs come from SM-A510F stock (nougat)
+
 # aptX - from marlin - OPM1.171019.011
 lib/libaptX_encoder.so|984739a0bc968e18f75ced205733fe3f51c2d4f0
 
@@ -17,6 +19,9 @@ lib/libfloatingfeature.so
 vendor/lib/egl/libGLES_mali.so
 
 # protobuf
+# precompiled from https://gitlab.com/Exynos7580/android_external_protobuf-compat-2.6
+# its the android N protobuf library slightly modified to avoid colissions with the incompatible
+# protobuf of Oreo and up
 lib/libprotobuf-cpp-fl26.so|f2436050b38e5acb63d36ad7b24a0c2612d68749
 
 # Widevine
