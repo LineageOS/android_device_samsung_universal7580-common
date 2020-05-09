@@ -1,0 +1,7 @@
+# Graphics sysfs
+allow hal_graphics_composer_default sysfs_graphics:dir  search;
+allow hal_graphics_composer_default sysfs_graphics:file rw_file_perms;
+
+# uevent socket
+allow hal_graphics_composer_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
