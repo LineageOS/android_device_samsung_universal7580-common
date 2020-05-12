@@ -1,6 +1,5 @@
 cc_library_shared {
     name: "libstagefright_shim",
-    proprietary: true,
     
     srcs: [
         "CameraSource.cpp",
