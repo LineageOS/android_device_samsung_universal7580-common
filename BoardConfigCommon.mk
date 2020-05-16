@@ -192,4 +192,4 @@ PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
 # Shim
 TARGET_LD_SHIM_LIBS += \
-    /system/bin/mediaserver|/vendor/lib/libstagefright_shim.so
+    /system/bin/mediaserver|/system/lib/libstagefright_shim.so
