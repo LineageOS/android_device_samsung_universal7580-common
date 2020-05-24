@@ -48,6 +48,12 @@ genfscon sysfs /devices/13850000.i2c/i2c-10/10-0020/input/input3            u:ob
 genfscon sysfs /devices/i2c.20/i2c-4/4-0020/input/input2                    u:object_r:sysfs_input:s0
 genfscon sysfs /devices/virtual/fingerprint/fingerprint                     u:object_r:sysfs_input:s0
 
+# J7 power devices
+genfscon sysfs /devices/13850000.i2c/i2c-8/8-0049/sm5703-charger/power_supply       u:object_r:sysfs_usb_supply:s0
+
+# J7 Input devices
+genfscon sysfs /devices/13860000.i2c/i2c-9/9-0048/input/input2           u:object_r:sysfs_input:s0
+
 # S5 NEO Input devices
 genfscon sysfs /devices/13860000.i2c/i2c-11/11-0048/input/input2            u:object_r:sysfs_input:s0
 genfscon sysfs /devices/i2c.22/i2c-4/4-0020/input/input1                    u:object_r:sysfs_input:s0
