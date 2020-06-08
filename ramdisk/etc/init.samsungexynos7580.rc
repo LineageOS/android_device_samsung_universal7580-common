@@ -58,9 +58,8 @@ on boot
     # Allow to access debugfs
     chmod 755 /sys/kernel/debug
 
-    # Reset mDNIe mode & scenario
+    # Reset mDNIe scenario
     write /sys/class/mdnie/mdnie/scenario 0
-    write /sys/class/mdnie/mdnie/mode 0
 
     # Set up kernel tracing, but disable it by default
     chmod 0222 /sys/kernel/debug/tracing/trace_marker
