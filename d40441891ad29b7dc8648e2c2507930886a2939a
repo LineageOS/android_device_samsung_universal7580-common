@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0db8299e_acd86ef9",
+        "filename": "sepolicy/rild.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 19057
+      },
+      "writtenOn": "2020-07-06T11:18:16Z",
+      "side": 1,
+      "message": "What files are these affecting?",
+      "revId": "d40441891ad29b7dc8648e2c2507930886a2939a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
