@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "20521ef8_c529575d",
+        "filename": "configs/gps/gps.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 17401
+      },
+      "writtenOn": "2020-07-30T16:18:17Z",
+      "side": 1,
+      "message": "chaging it to https should probably be in its own change?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 63
+      },
+      "revId": "ea639a334ff665ef7286895b6ba97fc15e1e3be0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
