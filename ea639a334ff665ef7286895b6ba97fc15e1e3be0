@@ -46,6 +46,30 @@
       "revId": "ea639a334ff665ef7286895b6ba97fc15e1e3be0",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2dc14ad_cbe9bcd8",
+        "filename": "configs/gps/gps.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 19057
+      },
+      "writtenOn": "2020-07-30T16:20:41Z",
+      "side": 1,
+      "message": "Ignore that comment",
+      "parentUuid": "78f2bc19_1bf203c1",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 63
+      },
+      "revId": "ea639a334ff665ef7286895b6ba97fc15e1e3be0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
