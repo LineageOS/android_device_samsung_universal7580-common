@@ -70,6 +70,30 @@
       "revId": "ea639a334ff665ef7286895b6ba97fc15e1e3be0",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f7defcd_d442e23e",
+        "filename": "configs/gps/gps.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 17401
+      },
+      "writtenOn": "2020-07-30T16:20:44Z",
+      "side": 1,
+      "message": "well the commit message is \"Use ntp server that is the closest to the user\" which is entirely unrelated to changing the XTRA servers to https :D",
+      "parentUuid": "78f2bc19_1bf203c1",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 63
+      },
+      "revId": "ea639a334ff665ef7286895b6ba97fc15e1e3be0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
