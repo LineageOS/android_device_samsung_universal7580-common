@@ -29,9 +29,6 @@ on post-fs-data
     mkdir /data/misc/wifi_share_profile 0771 wifi system
     mkdir /data/misc/wifi_hostapd 0771 wifi system
 
-    # Professioanl Audio
-    mkdir /data/misc/jack 0770 jack system
-
     # Audio I2C node for TFA amp
     chmod 0660 /dev/i2c-14
     chown system system /dev/i2c-14
@@ -42,9 +39,6 @@ on post-fs-data
 
     # hatp
     mkdir /data/misc/radio/hatp 0755 radio system
-
-    # Samsung Pay
-    mkdir /efs/pfw_data 0760 spay spay
 
     # NFC
     mkdir /data/nfc 0700 nfc nfc
