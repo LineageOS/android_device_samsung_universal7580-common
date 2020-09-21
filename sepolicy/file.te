@@ -43,7 +43,6 @@ type sysfs_wifi, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_usb_supply, sysfs_type, fs_type, mlstrustedobject;
 type sysfs_mmc, sysfs_type, fs_type, mlstrustedobject;
 type sysfs_graphics, sysfs_type, fs_type, mlstrustedobject;
-type sysfs_ion, sysfs_type, fs_type, mlstrustedobject;
 type sysfs_block, sysfs_type, fs_type, mlstrustedobject;
 type sysfs_jack, sysfs_type, fs_type, mlstrustedobject;
 type sysfs_v4l, sysfs_type, fs_type, mlstrustedobject;
