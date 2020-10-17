@@ -186,6 +186,9 @@ PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 # HIDL
 PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 
+# memfd
+TARGET_HAS_MEMFD_BACKPORT := true
+
 # Shim
 TARGET_LD_SHIM_LIBS += \
     /system/bin/mediaserver|/system/lib/libstagefright_shim.so \
