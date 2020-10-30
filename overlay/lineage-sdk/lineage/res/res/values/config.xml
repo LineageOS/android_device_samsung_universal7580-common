@@ -18,4 +18,11 @@
         <item>restart_recovery</item>
         <item>restart_download</item>
      </string-array>
+
+    <!-- Button backlight control. Possible values are:
+            0 - Not supported
+            1 - Supported, but only on/off mode
+            2 - Supported with variable brightness control
+    -->
+    <integer name="config_deviceSupportsButtonBrightnessControl">1</integer>
 </resources>
