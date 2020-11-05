@@ -61,7 +61,7 @@ extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTIO
 
 # Fix proprietary blobs
 BLOB_ROOT="$ANDROID_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary
-patchelf --replace-needed libgui.so libsensor.so $BLOB_ROOT/vendor/bin/gpsd
+"${PATCHELF}" --replace-needed libgui.so libsensor.so $BLOB_ROOT/vendor/bin/gpsd
 
 # replace SSLv3_client_method with SSLv23_method
 sed -i "s/SSLv3_client_method/SSLv23_method\x00\x00\x00\x00\x00\x00/" $BLOB_ROOT/vendor/bin/gpsd
