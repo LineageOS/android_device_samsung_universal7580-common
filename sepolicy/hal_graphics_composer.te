@@ -1,3 +1,5 @@
+vndbinder_use(hal_graphics_composer_default);
+
 # Graphics sysfs
 allow hal_graphics_composer_default sysfs_graphics:dir  search;
 allow hal_graphics_composer_default sysfs_graphics:file rw_file_perms;
@@ -5,3 +7,5 @@ allow hal_graphics_composer_default sysfs_graphics:file rw_file_perms;
 # uevent socket
 allow hal_graphics_composer_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 
+# Video devices
+allow hal_graphics_composer_default video_device:chr_file rw_file_perms;
