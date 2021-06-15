@@ -28,7 +28,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "a3xelte a5xelte a7xelte gvwifi gvlte j7elte s5neolte"
+write_headers "a3xelte a5xelte a7xelte gvwifi gvlte j7elte j7xlte s5neolte"
 
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
 

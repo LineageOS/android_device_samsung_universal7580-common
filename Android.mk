@@ -16,7 +16,7 @@
 
 LOCAL_PATH := device/samsung/universal7580-common
 
-ifneq ($(filter a3xelte a5xelte a7xelte gvwifi gvlte j7elte s5neolte, $(TARGET_DEVICE)),)
+ifneq ($(filter a3xelte a5xelte a7xelte gvwifi gvlte j7elte j7xlte s5neolte, $(TARGET_DEVICE)),)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
