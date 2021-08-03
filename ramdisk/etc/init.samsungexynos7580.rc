@@ -27,6 +27,8 @@ on init
     symlink /data/app /factory
     symlink /dev/block/platform/13540000.dwmmc0/by-name/PERSISTENT /dev/block/persistent
 
+    write /proc/sys/vm/page-cluster 0
+
 on post-fs-data
 #    mkdir /data/media 0770 media_rw media_rw
 
@@ -226,6 +228,10 @@ on boot
 on fs
     mount_all /fstab.samsungexynos7580
     setprop ro.crypto.fuse_sdcard true
+
+    # Enable swap
+    swapon_all /fstab.samsungexynos7580
+    write /proc/sys/vm/swappiness 100
 
 # Permissions for ION
     chmod 0660 /sys/class/ion_cma/ion_video_ext/isolated
@@ -809,9 +815,3 @@ on charger
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor powersave
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor powersave
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor powersave
-
-service sswap /vendor/bin/sswap -s -f 1024
-      class core
-      user root
-      group root
-      oneshot

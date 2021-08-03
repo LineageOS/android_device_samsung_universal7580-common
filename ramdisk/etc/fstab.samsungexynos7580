@@ -19,3 +19,6 @@
 /devices/13560000.dwmmc2/mmc_host/mmc*                  auto        auto    defaults                                                                        voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/13510000.usb/usb*                              auto        auto    defaults                                                                        voldmanaged=usb:auto
 /devices/13520000.usb/usb*                              auto        auto    defaults                                                                        voldmanaged=usb:auto
+
+# ZRAM
+/dev/block/zram0                                        none        swap    defaults                                                                        zramsize=75%,max_comp_streams=8
