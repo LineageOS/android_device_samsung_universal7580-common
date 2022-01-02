@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0f3b9a4_100aef4c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27948
+      },
+      "writtenOn": "2022-01-02T11:45:27Z",
+      "side": 1,
+      "message": "This adds the service target to the build, as discussed, which will be needed if hwbinder will be used rather than passthrough for GNSS.\n\n~Thanks",
+      "revId": "5636a835d526af1b8654802293a456ac603b9a29",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
