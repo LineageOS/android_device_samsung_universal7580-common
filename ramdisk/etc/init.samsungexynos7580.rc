@@ -791,6 +791,15 @@ service gpsd /vendor/bin/gpsd -c /system/etc/gps.xml
     group system wakelock inet net_raw
     ioprio be 0
 
+# Need to stop gnss before decryption because it hangs umount of data
+# as our libgps leaves some open handles on /data
+on property:vold.decrypt=trigger_shutdown_framework
+    stop vendor.gnss_service
+
+on property:vold.decrypt=trigger_restart_framework
+    start vendor.gnss_service
+
+
 # Set watchdog timer to 30 seconds and pet it every 10 seconds to get a 20 second margin
 service watchdogd /sbin/watchdogd 10 20
     class core
