@@ -51,6 +51,23 @@
       "parentUuid": "604fac98_29081650",
       "revId": "5636a835d526af1b8654802293a456ac603b9a29",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "38a2fb43_ba843d0c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19057
+      },
+      "writtenOn": "2022-01-04T17:12:01Z",
+      "side": 1,
+      "message": "This fixes FDE:\nhttps://review.lineageos.org/c/LineageOS/android_device_samsung_universal7580-common/+/321187\n\nOur libgps had some stale file handles, stopping GNSS before decryption starts seems to solve it",
+      "revId": "5636a835d526af1b8654802293a456ac603b9a29",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
