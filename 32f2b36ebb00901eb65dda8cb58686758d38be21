@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a57d77e_baf02e3e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 24481
+      },
+      "writtenOn": "2022-04-28T08:17:02Z",
+      "side": 1,
+      "message": "Hello Danny, Thanks for the patch, my comment is not related to exynos7580 but might be relevant if someone came across this issue.\n\nyour patch fixes FDE on my treltexx (Galaxy note 4), as Binderized GNSS caused a loop, due to not being able to umount data as you mentioned.\n\nHowever encrypting the device became an issue after the patch, as when it reboots to encrypt, GNSS is disabled, and once its done encrypting android refuses to load due to no GNSS service being detected. \n\nrequiring either a manual start of gnss (adb shell start vendor.gnss_service) or a reboot of the device\n\nive got around this by starting GNSS at the framework restart trigger. this gets around the issue.\n\nThanks again for the patch!\n\n# Start GNSS on First Encryption reboot to avoid loop\non property:vold.decrypt\u003dtrigger_restart_min_framework\n    start vendor.gnss_service",
+      "revId": "32f2b36ebb00901eb65dda8cb58686758d38be21",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
